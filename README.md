@@ -1,0 +1,2 @@
+## ssTech-JAVA
+Aplicación para un control de procesos para la empresa SSTECH encargada de reparar computadoras. Se podrá verificar procesos ordenes de servicios que tengan y tener un control de refacciones.
