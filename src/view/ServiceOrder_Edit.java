@@ -47,6 +47,7 @@ public class ServiceOrder_Edit extends javax.swing.JInternalFrame {
         btnReturn = new javax.swing.JButton();
 
         setTitle("Editar - Orden de Servicio");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         lblEditar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblEditar.setForeground(new java.awt.Color(0, 102, 102));
@@ -151,7 +152,7 @@ public class ServiceOrder_Edit extends javax.swing.JInternalFrame {
                         .addComponent(btnEdit)
                         .addGap(49, 49, 49)
                         .addComponent(btnReturn)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +190,7 @@ public class ServiceOrder_Edit extends javax.swing.JInternalFrame {
                     .addComponent(btnFiller)
                     .addComponent(btnEdit)
                     .addComponent(btnReturn))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();

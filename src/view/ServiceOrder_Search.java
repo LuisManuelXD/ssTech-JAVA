@@ -10,12 +10,12 @@ import javax.swing.ImageIcon;
  *
  * @author nerif
  */
-public class ServiceOrder_Show extends javax.swing.JInternalFrame {
+public class ServiceOrder_Search extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ServiceOrder_Show
      */
-    public ServiceOrder_Show() {
+    public ServiceOrder_Search() {
         initComponents();
     }
 
@@ -30,20 +30,18 @@ public class ServiceOrder_Show extends javax.swing.JInternalFrame {
 
         txtNPedido = new javax.swing.JTextField();
         lblMostrar = new javax.swing.JLabel();
-        lblPedido = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblServicios = new javax.swing.JTable();
-        btnSearch = new javax.swing.JButton();
         btnReturn = new javax.swing.JButton();
+        btnSearch2 = new javax.swing.JButton();
 
-        setTitle("Mostrar - Orden de Servicio");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setTitle("Buscar - Orden de Servicio");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         lblMostrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblMostrar.setForeground(new java.awt.Color(0, 102, 102));
-        lblMostrar.setText("Mostrar");
-
-        lblPedido.setForeground(new java.awt.Color(0, 102, 102));
-        lblPedido.setText("Número de pedido:");
+        lblMostrar.setText("Buscar");
 
         tblServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -58,9 +56,9 @@ public class ServiceOrder_Show extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblServicios);
 
-        btnSearch.setText("Buscar");
-
         btnReturn.setText("Volver");
+
+        btnSearch2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,38 +67,38 @@ public class ServiceOrder_Show extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(lblMostrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPedido)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(btnSearch)
-                        .addGap(66, 66, 66)
-                        .addComponent(btnReturn)))
+                        .addGap(73, 73, 73)
+                        .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearch2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(btnReturn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(lblMostrar)))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(8, 8, 8)
                 .addComponent(lblMostrar)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPedido)
-                    .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(btnReturn))
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnReturn)
+                        .addGap(35, 35, 35))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSearch2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -109,10 +107,9 @@ public class ServiceOrder_Show extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnReturn;
-    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearch2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMostrar;
-    private javax.swing.JLabel lblPedido;
     private javax.swing.JTable tblServicios;
     private javax.swing.JTextField txtNPedido;
     // End of variables declaration//GEN-END:variables

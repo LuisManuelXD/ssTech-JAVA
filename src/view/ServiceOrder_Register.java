@@ -46,6 +46,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
         btnReturn = new javax.swing.JButton();
 
         setTitle("Registrar - Orden de Servicio");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         lblRegistro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblRegistro.setForeground(new java.awt.Color(0, 102, 102));
@@ -93,27 +94,17 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(lblRegistro))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPedido)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblCliente)
                         .addGap(18, 18, 18)
                         .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblCelular)
                         .addGap(18, 18, 18)
                         .addComponent(txtNCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblEstado)
                         .addGap(18, 18, 18)
                         .addComponent(rbtnEspera)
@@ -122,15 +113,19 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(rbtnTerminado))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblFechaSalida)
                         .addGap(18, 18, 18)
                         .addComponent(txtFSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(lblFechaEntrega)
                         .addGap(18, 18, 18)
-                        .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPedido)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRegistro)
+                            .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
@@ -174,7 +169,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegister)
                     .addComponent(btnReturn))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();

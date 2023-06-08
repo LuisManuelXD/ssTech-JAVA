@@ -47,6 +47,7 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
         btnFiller = new javax.swing.JButton();
 
         setTitle("Eliminar - Orden de Servicio");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         lblEstado.setForeground(new java.awt.Color(0, 102, 102));
         lblEstado.setText("Estado:");
@@ -190,7 +191,7 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
                     .addComponent(btnDelete)
                     .addComponent(btnReturn)
                     .addComponent(btnFiller))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
