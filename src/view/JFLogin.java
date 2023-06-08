@@ -4,15 +4,8 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author riost_fq9d95t
- */
 public class JFLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JFl
-     */
     public JFLogin() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
