@@ -31,15 +31,15 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
         jlbCantidad = new javax.swing.JLabel();
         jsbCantidadBarra = new javax.swing.JScrollBar();
         jtfID = new javax.swing.JTextField();
-        jbnVolver = new javax.swing.JButton();
         jlbNumero = new javax.swing.JLabel();
-        jbnEditarHerramienta = new javax.swing.JButton();
         jlbNombreHerramienta = new javax.swing.JLabel();
         jrbConsumible = new javax.swing.JRadioButton();
         jlbID = new javax.swing.JLabel();
         jrbUtilizable = new javax.swing.JRadioButton();
         jtfNombreHerramienta = new javax.swing.JTextField();
         jlbTitulo = new javax.swing.JLabel();
+        jbnVolver = new javax.swing.JButton();
+        jbnEditar = new javax.swing.JButton();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -47,9 +47,11 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
         setTitle("Editar Herramienta");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
+        jlbTipo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbTipo.setForeground(new java.awt.Color(0, 102, 102));
         jlbTipo.setText("Tipo:");
 
+        jlbCantidad.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbCantidad.setForeground(new java.awt.Color(0, 102, 102));
         jlbCantidad.setText("Cantidad");
 
@@ -58,29 +60,24 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
 
         jtfID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
-        jbnVolver.setText("Volver");
-        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
+        jlbNumero.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbNumero.setForeground(new java.awt.Color(0, 102, 102));
         jlbNumero.setText("#");
 
-        jbnEditarHerramienta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnEditarHerramienta.setForeground(new java.awt.Color(0, 102, 102));
-        jbnEditarHerramienta.setText("Editar");
-        jbnEditarHerramienta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
+        jlbNombreHerramienta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbNombreHerramienta.setForeground(new java.awt.Color(0, 102, 102));
         jlbNombreHerramienta.setText("Nombre de la herramienta: ");
 
-        jrbConsumible.setForeground(new java.awt.Color(0, 102, 102));
+        jrbConsumible.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jrbConsumible.setForeground(new java.awt.Color(102, 102, 102));
         jrbConsumible.setText("Consumible");
 
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbID.setForeground(new java.awt.Color(0, 102, 102));
         jlbID.setText("ID:");
 
-        jrbUtilizable.setForeground(new java.awt.Color(0, 102, 102));
+        jrbUtilizable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jrbUtilizable.setForeground(new java.awt.Color(102, 102, 102));
         jrbUtilizable.setText("Utilizable");
 
         jtfNombreHerramienta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -89,59 +86,68 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
         jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
         jlbTitulo.setText("Editar una herramienta");
 
+        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
+        jbnVolver.setText("Volver");
+
+        jbnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEditar.setForeground(new java.awt.Color(0, 102, 102));
+        jbnEditar.setText("Editar");
+
         jDesktopPane1.setLayer(jlbTipo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbCantidad, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jsbCantidadBarra, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbNumero, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnEditarHerramienta, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbNombreHerramienta, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jrbConsumible, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jrbUtilizable, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jtfNombreHerramienta, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnEditar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jbnEditarHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbID)
+                                    .addComponent(jlbCantidad))
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbConsumible)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrbUtilizable))
+                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(jlbNumero))
+                                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                                .addGap(96, 96, 96)
+                                                .addComponent(jlbTipo)))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jlbID)
-                                .addComponent(jlbCantidad))
-                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jrbConsumible)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jrbUtilizable))
-                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                            .addGap(15, 15, 15)
-                                            .addComponent(jlbNumero))
-                                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                            .addGap(96, 96, 96)
-                                            .addComponent(jlbTipo)))
-                                    .addGap(0, 0, Short.MAX_VALUE))))
-                        .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbNombreHerramienta)
-                            .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbTitulo))))
-                .addGap(90, 90, 90))
+                                .addComponent(jlbNombreHerramienta)
+                                .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jlbTitulo)))
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jbnEditar)
+                        .addGap(42, 42, 42)
+                        .addComponent(jbnVolver)
+                        .addGap(130, 130, 130))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,11 +173,11 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
                     .addComponent(jlbNumero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnEditarHerramienta)
+                    .addComponent(jbnEditar)
                     .addComponent(jbnVolver))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -193,7 +199,7 @@ public class jtfEditTool extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JButton jbnEditarHerramienta;
+    private javax.swing.JButton jbnEditar;
     private javax.swing.JButton jbnVolver;
     private javax.swing.JLabel jlbCantidad;
     private javax.swing.JLabel jlbID;

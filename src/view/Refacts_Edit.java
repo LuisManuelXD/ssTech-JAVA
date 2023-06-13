@@ -47,6 +47,7 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
         setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
+        lblCliente.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCliente.setForeground(new java.awt.Color(0, 102, 102));
         lblCliente.setText("Producto");
 
@@ -58,7 +59,7 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Memoria RAM", "SSD", "HDD" }));
 
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton1.setText("Bueno");
 
@@ -66,22 +67,25 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Editar Refacciones");
 
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton2.setText("Medio");
 
+        lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(0, 102, 102));
         lblEstado.setText("Categoría");
 
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jRadioButton3.setForeground(new java.awt.Color(102, 102, 102));
         jRadioButton3.setText("Malo");
 
+        lblFechaSalida.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblFechaSalida.setForeground(new java.awt.Color(0, 102, 102));
         lblFechaSalida.setText("Estado");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Herramientas" }));
 
+        lblPedido.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblPedido.setForeground(new java.awt.Color(0, 102, 102));
         lblPedido.setText("Unidades");
 
@@ -91,6 +95,7 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
             }
         });
 
+        lblCelular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCelular.setForeground(new java.awt.Color(0, 102, 102));
         lblCelular.setText("Precio");
 
@@ -126,30 +131,31 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
                     .addComponent(lblFechaSalida)
                     .addComponent(lblCelular)
                     .addComponent(lblCliente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton2)
+                        .addGap(12, 12, 12)
+                        .addComponent(jRadioButton3)
+                        .addGap(32, 32, 32))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(btnDelete)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnReturn))
-                    .addComponent(jLabel1)
-                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2)
-                                .addGap(12, 12, 12)
-                                .addComponent(jRadioButton3))
-                            .addComponent(txtNCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(64, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(btnDelete)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(btnReturn))
+                                .addComponent(jLabel1)
+                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                    .addGap(26, 26, 26)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +188,7 @@ public class Refacts_Edit extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReturn)
                     .addComponent(btnDelete))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

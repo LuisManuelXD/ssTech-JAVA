@@ -28,18 +28,18 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
 
         rbGroup1 = new javax.swing.ButtonGroup();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jbnVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaDescripcionServicio = new javax.swing.JTextArea();
+        jrbMantPreventivo = new javax.swing.JRadioButton();
+        jlbDescripcionServicio = new javax.swing.JLabel();
         jlbPrecioServicio = new javax.swing.JLabel();
         jtfPrecioServicio = new javax.swing.JTextField();
-        jlbTiposServicio = new javax.swing.JLabel();
-        jrbMantPreventivo = new javax.swing.JRadioButton();
-        jrbMantCorrectivo = new javax.swing.JRadioButton();
-        jbnVolver = new javax.swing.JButton();
-        jbnRegistrar = new javax.swing.JButton();
+        jlbTipoServicio = new javax.swing.JLabel();
+        jbnEditar = new javax.swing.JButton();
         jlbTitulo = new javax.swing.JLabel();
         jlbID = new javax.swing.JLabel();
-        jlbDescripcionServicio = new javax.swing.JLabel();
+        jrbMantCorrectivo = new javax.swing.JRadioButton();
         jtfID = new javax.swing.JTextField();
 
         setIconifiable(true);
@@ -48,99 +48,101 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
         setTitle("Registrar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
-        jtaDescripcionServicio.setColumns(20);
-        jtaDescripcionServicio.setRows(5);
-        jScrollPane1.setViewportView(jtaDescripcionServicio);
-
-        jlbPrecioServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbPrecioServicio.setText("Precio del servicio");
-
-        jlbTiposServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTiposServicio.setText("Tipo de servicio");
-
-        rbGroup1.add(jrbMantPreventivo);
-        jrbMantPreventivo.setForeground(new java.awt.Color(0, 102, 102));
-        jrbMantPreventivo.setText("Mantenimiento Preventivo");
-
-        rbGroup1.add(jrbMantCorrectivo);
-        jrbMantCorrectivo.setForeground(new java.awt.Color(0, 102, 102));
-        jrbMantCorrectivo.setText("Mantenimiento correctivo");
-
         jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
         jbnVolver.setText("Volver");
 
-        jbnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnRegistrar.setForeground(new java.awt.Color(0, 102, 102));
-        jbnRegistrar.setText("Registrar");
+        jtaDescripcionServicio.setColumns(20);
+        jtaDescripcionServicio.setRows(5);
+        jScrollPane1.setViewportView(jtaDescripcionServicio);
 
-        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTitulo.setText("Registra un servicio");
+        jrbMantPreventivo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jrbMantPreventivo.setForeground(new java.awt.Color(102, 102, 102));
+        jrbMantPreventivo.setText("Mantenimiento preventivo");
 
-        jlbID.setForeground(new java.awt.Color(0, 102, 102));
-        jlbID.setText("ID:");
-
+        jlbDescripcionServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbDescripcionServicio.setForeground(new java.awt.Color(0, 102, 102));
         jlbDescripcionServicio.setText("Descripcion del servicio");
 
+        jlbPrecioServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbPrecioServicio.setForeground(new java.awt.Color(0, 102, 102));
+        jlbPrecioServicio.setText("Precio del servicio");
+
+        jlbTipoServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbTipoServicio.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTipoServicio.setText("Tipo de servicio");
+
+        jbnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEditar.setForeground(new java.awt.Color(0, 102, 102));
+        jbnEditar.setText("Registrar");
+
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTitulo.setText("Registrar un servicio");
+
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbID.setForeground(new java.awt.Color(0, 102, 102));
+        jlbID.setText("ID:");
+
+        jrbMantCorrectivo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jrbMantCorrectivo.setForeground(new java.awt.Color(102, 102, 102));
+        jrbMantCorrectivo.setText("Mantenimiento correctivo");
+
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jrbMantPreventivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbDescripcionServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbPrecioServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jtfPrecioServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbTiposServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jrbMantPreventivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jrbMantCorrectivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnRegistrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTipoServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnEditar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbDescripcionServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jrbMantCorrectivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jbnEditar)
+                .addGap(42, 42, 42)
+                .addComponent(jbnVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbDescripcionServicio)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jrbMantPreventivo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrbMantCorrectivo))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jlbPrecioServicio)
-                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                    .addComponent(jlbTiposServicio)
-                                    .addGap(6, 6, 6)))
-                            .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbID)))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                            .addComponent(jlbID))
+                        .addGap(144, 144, 144))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jlbTitulo))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jbnRegistrar)
-                                .addGap(76, 76, 76)
-                                .addComponent(jbnVolver)))
-                        .addGap(48, 48, 48)))
-                .addGap(49, 49, 49))
+                            .addComponent(jlbDescripcionServicio)
+                            .addComponent(jlbPrecioServicio)
+                            .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jlbTitulo)
+                        .addGap(157, 157, 157))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jrbMantPreventivo)
+                            .addComponent(jlbTipoServicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbMantCorrectivo)
+                        .addGap(43, 43, 43))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
                 .addComponent(jlbTitulo)
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(jlbDescripcionServicio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,16 +155,16 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
                     .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jlbTiposServicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlbTipoServicio)
+                .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbMantPreventivo)
                     .addComponent(jrbMantCorrectivo))
                 .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnRegistrar)
+                    .addComponent(jbnEditar)
                     .addComponent(jbnVolver))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,12 +185,12 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbnRegistrar;
+    private javax.swing.JButton jbnEditar;
     private javax.swing.JButton jbnVolver;
     private javax.swing.JLabel jlbDescripcionServicio;
     private javax.swing.JLabel jlbID;
     private javax.swing.JLabel jlbPrecioServicio;
-    private javax.swing.JLabel jlbTiposServicio;
+    private javax.swing.JLabel jlbTipoServicio;
     private javax.swing.JLabel jlbTitulo;
     private javax.swing.JRadioButton jrbMantCorrectivo;
     private javax.swing.JRadioButton jrbMantPreventivo;

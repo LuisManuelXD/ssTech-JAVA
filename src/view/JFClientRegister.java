@@ -27,20 +27,20 @@ public class JFClientRegister extends javax.swing.JFrame {
     private void initComponents() {
 
         jiClienteRegistro = new javax.swing.JInternalFrame();
-        lblRegister = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
-        lblLastName = new javax.swing.JLabel();
-        lblAge = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         lblMail = new javax.swing.JLabel();
-        lblCellPhone = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtLastName = new javax.swing.JTextField();
-        txtAge = new javax.swing.JTextField();
         txtMail = new javax.swing.JTextField();
+        lblCellPhone = new javax.swing.JLabel();
         txtCellPhone = new javax.swing.JTextField();
-        btnRegister = new javax.swing.JButton();
         btnReturn = new javax.swing.JButton();
-        lblMessage = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        btnEdit = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        txtName = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        lblAge = new javax.swing.JLabel();
+        jlbTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,22 +48,6 @@ public class JFClientRegister extends javax.swing.JFrame {
         jiClienteRegistro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jiClienteRegistro.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
         jiClienteRegistro.setVisible(true);
-
-        lblRegister.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblRegister.setForeground(new java.awt.Color(0, 102, 102));
-        lblRegister.setText("Registrar cliente");
-
-        lblName.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        lblName.setForeground(new java.awt.Color(0, 102, 102));
-        lblName.setText("Nombres:");
-
-        lblLastName.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        lblLastName.setForeground(new java.awt.Color(0, 102, 102));
-        lblLastName.setText("Apellidos:");
-
-        lblAge.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        lblAge.setForeground(new java.awt.Color(0, 102, 102));
-        lblAge.setText("Edad:");
 
         lblMail.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         lblMail.setForeground(new java.awt.Color(0, 102, 102));
@@ -73,15 +57,8 @@ public class JFClientRegister extends javax.swing.JFrame {
         lblCellPhone.setForeground(new java.awt.Color(0, 102, 102));
         lblCellPhone.setText("Celular:");
 
-        btnRegister.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnRegister.setText("Registrar");
-        btnRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterActionPerformed(evt);
-            }
-        });
-
-        btnReturn.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnReturn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReturn.setForeground(new java.awt.Color(0, 102, 102));
         btnReturn.setText("Volver");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,76 +66,118 @@ public class JFClientRegister extends javax.swing.JFrame {
             }
         });
 
-        lblMessage.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblMessage.setForeground(new java.awt.Color(0, 102, 102));
-        lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblName.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 102, 102));
+        lblName.setText("Nombres:");
 
-        javax.swing.GroupLayout jiClienteRegistroLayout = new javax.swing.GroupLayout(jiClienteRegistro.getContentPane());
-        jiClienteRegistro.getContentPane().setLayout(jiClienteRegistroLayout);
-        jiClienteRegistroLayout.setHorizontalGroup(
-            jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jiClienteRegistroLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jiClienteRegistroLayout.createSequentialGroup()
-                        .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+        btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnEdit.setForeground(new java.awt.Color(0, 102, 102));
+        btnEdit.setText("Registrar");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18-25", "26-30", "31-35", "36-40" }));
+
+        lblLastName.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(0, 102, 102));
+        lblLastName.setText("Apellidos:");
+
+        lblAge.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        lblAge.setForeground(new java.awt.Color(0, 102, 102));
+        lblAge.setText("Edad:");
+
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTitulo.setText("Registrar Cliente");
+
+        jDesktopPane1.setLayer(lblMail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtMail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblCellPhone, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtCellPhone, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnReturn, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblName, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnEdit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jComboBox1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtName, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblLastName, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(txtLastName, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(lblAge, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jiClienteRegistroLayout.createSequentialGroup()
-                        .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblLastName)
                             .addComponent(lblName)
                             .addComponent(lblAge, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblMail, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCellPhone, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jiClienteRegistroLayout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jiClienteRegistroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblRegister)
-                .addGap(59, 59, 59))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbTitulo)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtName)
+                                .addComponent(txtLastName)
+                                .addComponent(txtMail)
+                                .addComponent(txtCellPhone)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
-        jiClienteRegistroLayout.setVerticalGroup(
-            jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jiClienteRegistroLayout.createSequentialGroup()
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jlbTitulo)
+                .addGap(18, 18, 18)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(23, 23, 23)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLastName)
                     .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAge)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMail)
                     .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCellPhone)
                     .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                .addGap(34, 34, 34))
+        );
+
+        javax.swing.GroupLayout jiClienteRegistroLayout = new javax.swing.GroupLayout(jiClienteRegistro.getContentPane());
+        jiClienteRegistro.getContentPane().setLayout(jiClienteRegistroLayout);
+        jiClienteRegistroLayout.setHorizontalGroup(
+            jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1)
+        );
+        jiClienteRegistroLayout.setVerticalGroup(
+            jiClienteRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,13 +194,13 @@ public class JFClientRegister extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegisterActionPerformed
-
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,17 +239,17 @@ public class JFClientRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnReturn;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jiClienteRegistro;
+    private javax.swing.JLabel jlbTitulo;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblCellPhone;
     private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblMail;
-    private javax.swing.JLabel lblMessage;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblRegister;
-    private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCellPhone;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtMail;

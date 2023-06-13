@@ -56,7 +56,7 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTitulo.setText("Buscar refacciones");
+        jlbTitulo.setText("Buscar Refacciones");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
 

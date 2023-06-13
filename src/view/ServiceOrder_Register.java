@@ -55,6 +55,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
             }
         });
 
+        lblPedido.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblPedido.setForeground(new java.awt.Color(0, 102, 102));
         lblPedido.setText("Número de pedido:");
 
@@ -62,6 +63,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
         rbtnEspera.setForeground(new java.awt.Color(102, 102, 102));
         rbtnEspera.setText("En espera");
 
+        lblCliente.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCliente.setForeground(new java.awt.Color(0, 102, 102));
         lblCliente.setText("Cliente:");
 
@@ -74,6 +76,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
             }
         });
 
+        lblCelular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCelular.setForeground(new java.awt.Color(0, 102, 102));
         lblCelular.setText("Número de celular:");
 
@@ -86,9 +89,11 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
             }
         });
 
+        lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(0, 102, 102));
         lblEstado.setText("Estado:");
 
+        lblFechaSalida.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblFechaSalida.setForeground(new java.awt.Color(0, 102, 102));
         lblFechaSalida.setText("Fecha de pedido:");
 
@@ -96,6 +101,7 @@ public class ServiceOrder_Register extends javax.swing.JInternalFrame {
         btnEdit.setForeground(new java.awt.Color(0, 102, 102));
         btnEdit.setText("Editar");
 
+        lblFechaEntrega.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblFechaEntrega.setForeground(new java.awt.Color(0, 102, 102));
         lblFechaEntrega.setText("Fecha de entrega:");
 

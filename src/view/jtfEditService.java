@@ -51,9 +51,11 @@ public class jtfEditService extends javax.swing.JInternalFrame {
         jtaDescripcionServicio.setRows(5);
         jScrollPane1.setViewportView(jtaDescripcionServicio);
 
+        jlbPrecioServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbPrecioServicio.setForeground(new java.awt.Color(0, 102, 102));
         jlbPrecioServicio.setText("Precio del servicio");
 
+        jlbTipoServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbTipoServicio.setForeground(new java.awt.Color(0, 102, 102));
         jlbTipoServicio.setText("Tipo de servicio");
 
@@ -65,19 +67,23 @@ public class jtfEditService extends javax.swing.JInternalFrame {
         jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
         jlbTitulo.setText("Editar un servicio");
 
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbID.setForeground(new java.awt.Color(0, 102, 102));
         jlbID.setText("ID:");
 
-        jrbMantCorrectivo.setForeground(new java.awt.Color(0, 102, 102));
+        jrbMantCorrectivo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jrbMantCorrectivo.setForeground(new java.awt.Color(102, 102, 102));
         jrbMantCorrectivo.setText("Mantenimiento correctivo");
 
         jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
         jbnVolver.setText("Volver");
 
-        jrbMantPreventivo.setForeground(new java.awt.Color(0, 102, 102));
+        jrbMantPreventivo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jrbMantPreventivo.setForeground(new java.awt.Color(102, 102, 102));
         jrbMantPreventivo.setText("Mantenimiento preventivo");
 
+        jlbDescripcionServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbDescripcionServicio.setForeground(new java.awt.Color(0, 102, 102));
         jlbDescripcionServicio.setText("Descripcion del servicio");
 
@@ -99,40 +105,36 @@ public class jtfEditService extends javax.swing.JInternalFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addGap(139, 139, 139)
+                .addComponent(jbnEditar)
+                .addGap(42, 42, 42)
+                .addComponent(jbnVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jlbTipoServicio)
-                        .addGap(267, 267, 267))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbID))
+                        .addGap(144, 144, 144))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlbDescripcionServicio)
-                                    .addComponent(jlbPrecioServicio)
-                                    .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jlbID))
-                                    .addGap(78, 78, 78))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                        .addComponent(jrbMantPreventivo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jrbMantCorrectivo))
-                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addComponent(jbnEditar)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(jbnVolver)))))
+                            .addComponent(jlbDescripcionServicio)
+                            .addComponent(jlbPrecioServicio)
+                            .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(66, 66, 66))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(jlbTitulo)
-                        .addGap(157, 157, 157))))
+                        .addGap(157, 157, 157))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jrbMantPreventivo)
+                            .addComponent(jlbTipoServicio))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbMantCorrectivo)
+                        .addGap(43, 43, 43))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,11 +159,11 @@ public class jtfEditService extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbMantPreventivo)
                     .addComponent(jrbMantCorrectivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnEditar)
                     .addComponent(jbnVolver))
-                .addContainerGap())
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

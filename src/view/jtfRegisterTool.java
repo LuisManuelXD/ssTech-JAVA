@@ -28,19 +28,19 @@ public class jtfRegisterTool extends javax.swing.JInternalFrame {
 
         rbGroup1 = new javax.swing.ButtonGroup();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jrbUsable = new javax.swing.JRadioButton();
-        jlbCantidad = new javax.swing.JLabel();
         jlbNumero = new javax.swing.JLabel();
-        jsbCantidadBarra = new javax.swing.JScrollBar();
-        jlbTitulo = new javax.swing.JLabel();
-        jbnRegistrar = new javax.swing.JButton();
         jlbNombreHerramienta = new javax.swing.JLabel();
-        jbnVolver = new javax.swing.JButton();
-        jtfToolName = new javax.swing.JTextField();
-        jlbID = new javax.swing.JLabel();
-        jtfID = new javax.swing.JTextField();
-        jlbTipo = new javax.swing.JLabel();
         jrbConsumible = new javax.swing.JRadioButton();
+        jlbID = new javax.swing.JLabel();
+        jrbUtilizable = new javax.swing.JRadioButton();
+        jlbTipo = new javax.swing.JLabel();
+        jtfNombreHerramienta = new javax.swing.JTextField();
+        jlbCantidad = new javax.swing.JLabel();
+        jlbTitulo = new javax.swing.JLabel();
+        jsbCantidadBarra = new javax.swing.JScrollBar();
+        jbnVolver = new javax.swing.JButton();
+        jtfID = new javax.swing.JTextField();
+        jbnEditar = new javax.swing.JButton();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -48,115 +48,118 @@ public class jtfRegisterTool extends javax.swing.JInternalFrame {
         setTitle("Registrar Herramienta");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
-        rbGroup1.add(jrbUsable);
-        jrbUsable.setForeground(new java.awt.Color(0, 102, 102));
-        jrbUsable.setText("Utilizable");
+        jlbNumero.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbNumero.setForeground(new java.awt.Color(0, 102, 102));
+        jlbNumero.setText("#");
 
+        jlbNombreHerramienta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbNombreHerramienta.setForeground(new java.awt.Color(0, 102, 102));
+        jlbNombreHerramienta.setText("Nombre de la herramienta: ");
+
+        jrbConsumible.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jrbConsumible.setForeground(new java.awt.Color(102, 102, 102));
+        jrbConsumible.setText("Consumible");
+
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbID.setForeground(new java.awt.Color(0, 102, 102));
+        jlbID.setText("ID:");
+
+        jrbUtilizable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jrbUtilizable.setForeground(new java.awt.Color(102, 102, 102));
+        jrbUtilizable.setText("Utilizable");
+
+        jlbTipo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbTipo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTipo.setText("Tipo:");
+
+        jtfNombreHerramienta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jlbCantidad.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbCantidad.setForeground(new java.awt.Color(0, 102, 102));
         jlbCantidad.setText("Cantidad");
 
-        jlbNumero.setForeground(new java.awt.Color(0, 102, 102));
-        jlbNumero.setText("#");
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTitulo.setText("Registrar Herramienta");
 
         jsbCantidadBarra.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
         jsbCantidadBarra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTitulo.setText("Registrar una herramienta");
-
-        jbnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnRegistrar.setForeground(new java.awt.Color(0, 102, 102));
-        jbnRegistrar.setText("Registrar");
-        jbnRegistrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jlbNombreHerramienta.setForeground(new java.awt.Color(0, 102, 102));
-        jlbNombreHerramienta.setText("Nombre de la herramienta:");
-
         jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
         jbnVolver.setText("Volver");
-        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jtfToolName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jlbID.setForeground(new java.awt.Color(0, 102, 102));
-        jlbID.setText("ID:");
 
         jtfID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jlbTipo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTipo.setText("Tipo de herramienta");
+        jbnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEditar.setForeground(new java.awt.Color(0, 102, 102));
+        jbnEditar.setText("Registrar");
 
-        rbGroup1.add(jrbConsumible);
-        jrbConsumible.setForeground(new java.awt.Color(0, 102, 102));
-        jrbConsumible.setText("Consumible");
-
-        jDesktopPane1.setLayer(jrbUsable, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbCantidad, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbNumero, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jsbCantidadBarra, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnRegistrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jlbNombreHerramienta, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jtfToolName, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jlbTipo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jrbConsumible, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jrbUtilizable, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTipo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfNombreHerramienta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbCantidad, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jsbCantidadBarra, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnEditar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbNombreHerramienta)
-                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
-                                    .addComponent(jbnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jtfToolName, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jlbID)
-                                        .addComponent(jlbCantidad))
-                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                                    .addComponent(jrbConsumible)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jrbUsable))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                                    .addComponent(jlbTipo)
-                                                    .addGap(55, 55, 55))))
-                                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                            .addGap(15, 15, 15)
-                                            .addComponent(jlbNumero)
-                                            .addGap(0, 0, Short.MAX_VALUE))))
-                                .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29))
-                    .addComponent(jlbTitulo, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(61, Short.MAX_VALUE))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbID)
+                                    .addComponent(jlbCantidad))
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbConsumible)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrbUtilizable))
+                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(jlbNumero))
+                                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                                .addGap(96, 96, 96)
+                                                .addComponent(jlbTipo)))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jlbNombreHerramienta)
+                                .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jlbTitulo)))
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jbnEditar)
+                        .addGap(42, 42, 42)
+                        .addComponent(jbnVolver)
+                        .addGap(130, 130, 130))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jlbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlbNombreHerramienta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfToolName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jlbTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jlbNombreHerramienta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbID)
                     .addComponent(jlbTipo))
@@ -164,18 +167,18 @@ public class jtfRegisterTool extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jrbConsumible)
-                    .addComponent(jrbUsable))
+                    .addComponent(jrbUtilizable))
                 .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbCantidad)
                     .addComponent(jlbNumero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnRegistrar)
+                    .addComponent(jbnEditar)
                     .addComponent(jbnVolver))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,7 +200,7 @@ public class jtfRegisterTool extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JButton jbnRegistrar;
+    private javax.swing.JButton jbnEditar;
     private javax.swing.JButton jbnVolver;
     private javax.swing.JLabel jlbCantidad;
     private javax.swing.JLabel jlbID;
@@ -206,10 +209,10 @@ public class jtfRegisterTool extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbTipo;
     private javax.swing.JLabel jlbTitulo;
     private javax.swing.JRadioButton jrbConsumible;
-    private javax.swing.JRadioButton jrbUsable;
+    private javax.swing.JRadioButton jrbUtilizable;
     private javax.swing.JScrollBar jsbCantidadBarra;
     private javax.swing.JTextField jtfID;
-    private javax.swing.JTextField jtfToolName;
+    private javax.swing.JTextField jtfNombreHerramienta;
     private javax.swing.ButtonGroup rbGroup1;
     // End of variables declaration//GEN-END:variables
 }
