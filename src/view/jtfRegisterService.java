@@ -27,8 +27,7 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         rbGroup1 = new javax.swing.ButtonGroup();
-        jlbTitulo = new javax.swing.JLabel();
-        jlbDescripcionServicio = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaDescripcionServicio = new javax.swing.JTextArea();
         jlbPrecioServicio = new javax.swing.JLabel();
@@ -38,7 +37,9 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
         jrbMantCorrectivo = new javax.swing.JRadioButton();
         jbnVolver = new javax.swing.JButton();
         jbnRegistrar = new javax.swing.JButton();
+        jlbTitulo = new javax.swing.JLabel();
         jlbID = new javax.swing.JLabel();
+        jlbDescripcionServicio = new javax.swing.JLabel();
         jtfID = new javax.swing.JTextField();
 
         setIconifiable(true);
@@ -46,13 +47,6 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Registrar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
-
-        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTitulo.setText("Registra un servicio");
-
-        jlbDescripcionServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbDescripcionServicio.setText("Descripcion del servicio");
 
         jtaDescripcionServicio.setColumns(20);
         jtaDescripcionServicio.setRows(5);
@@ -72,78 +66,114 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
         jrbMantCorrectivo.setForeground(new java.awt.Color(0, 102, 102));
         jrbMantCorrectivo.setText("Mantenimiento correctivo");
 
+        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
         jbnVolver.setText("Volver");
 
+        jbnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnRegistrar.setForeground(new java.awt.Color(0, 102, 102));
         jbnRegistrar.setText("Registrar");
+
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTitulo.setText("Registra un servicio");
 
         jlbID.setForeground(new java.awt.Color(0, 102, 102));
         jlbID.setText("ID:");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbTitulo)
-                .addGap(90, 90, 90))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jlbDescripcionServicio)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jrbMantPreventivo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrbMantCorrectivo))
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jlbPrecioServicio)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jlbTiposServicio)
-                                            .addGap(6, 6, 6)))
-                                    .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbID))))
-                        .addContainerGap(20, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbnVolver)
-                        .addGap(77, 77, 77))))
+        jlbDescripcionServicio.setForeground(new java.awt.Color(0, 102, 102));
+        jlbDescripcionServicio.setText("Descripcion del servicio");
+
+        jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbPrecioServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfPrecioServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTiposServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jrbMantPreventivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jrbMantCorrectivo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnRegistrar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbDescripcionServicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbDescripcionServicio)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jrbMantPreventivo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jrbMantCorrectivo))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jlbPrecioServicio)
+                                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                    .addComponent(jlbTiposServicio)
+                                    .addGap(6, 6, 6)))
+                            .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(69, 69, 69)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbID)))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(jlbTitulo))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jbnRegistrar)
+                                .addGap(76, 76, 76)
+                                .addComponent(jbnVolver)))
+                        .addGap(48, 48, 48)))
+                .addGap(49, 49, 49))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(jlbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jlbDescripcionServicio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbPrecioServicio)
                     .addComponent(jlbID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbTiposServicio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbMantPreventivo)
                     .addComponent(jrbMantCorrectivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnVolver)
-                    .addComponent(jbnRegistrar))
-                .addGap(33, 33, 33))
+                .addGap(18, 18, 18)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnRegistrar)
+                    .addComponent(jbnVolver))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDesktopPane1)
         );
 
         pack();
@@ -151,6 +181,7 @@ public class jtfRegisterService extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbnRegistrar;
     private javax.swing.JButton jbnVolver;

@@ -26,19 +26,11 @@ public class jtfDeleteService extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlbTitulo = new javax.swing.JLabel();
-        jrbMantPreventivo = new javax.swing.JRadioButton();
-        jrbMantCorrectivo = new javax.swing.JRadioButton();
-        jlbID = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jbnVolver = new javax.swing.JButton();
-        jlbDescripcionServicio = new javax.swing.JLabel();
-        jbnBuscar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtaDescripcionServicio = new javax.swing.JTextArea();
-        jlbPrecioServicio = new javax.swing.JLabel();
+        jlbTitulo = new javax.swing.JLabel();
+        jlbID = new javax.swing.JLabel();
         jtfID = new javax.swing.JTextField();
-        jtfPrecioServicio = new javax.swing.JTextField();
-        jlbTipoServicio = new javax.swing.JLabel();
         jbnEliminar = new javax.swing.JButton();
 
         setIconifiable(true);
@@ -47,133 +39,100 @@ public class jtfDeleteService extends javax.swing.JInternalFrame {
         setTitle("Eliminar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
-        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
+        jbnVolver.setText("Volver");
+        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTitulo.setText("Eliminar un servicio");
+        jlbTitulo.setText("Eliminar un Servicio");
 
-        jrbMantPreventivo.setForeground(new java.awt.Color(0, 102, 102));
-        jrbMantPreventivo.setText("Mantenimiento Preventivo");
-
-        jrbMantCorrectivo.setForeground(new java.awt.Color(0, 102, 102));
-        jrbMantCorrectivo.setText("Mantenimiento correctivo");
-
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jlbID.setForeground(new java.awt.Color(0, 102, 102));
         jlbID.setText("ID:");
 
-        jbnVolver.setText("Volver");
+        jtfID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtfID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jlbDescripcionServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbDescripcionServicio.setText("Descripcion del servicio");
-
-        jbnBuscar.setText("Buscar");
-
-        jtaDescripcionServicio.setColumns(20);
-        jtaDescripcionServicio.setRows(5);
-        jScrollPane1.setViewportView(jtaDescripcionServicio);
-
-        jlbPrecioServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbPrecioServicio.setText("Precio del servicio");
-
-        jlbTipoServicio.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTipoServicio.setText("Tipo de servicio");
-
+        jbnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEliminar.setForeground(new java.awt.Color(0, 102, 102));
         jbnEliminar.setText("Eliminar");
+        jbnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jbnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbnEliminarActionPerformed(evt);
+            }
+        });
+
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbTitulo)
+                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                            .addComponent(jbnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                            .addComponent(jlbID)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbTitulo)
+                .addGap(36, 36, 36)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlbID)
+                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnEliminar)
+                    .addComponent(jbnVolver))
+                .addGap(23, 23, 23))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jlbDescripcionServicio)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jrbMantPreventivo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jrbMantCorrectivo))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jlbPrecioServicio)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jlbTipoServicio)
-                                            .addGap(6, 6, 6)))
-                                    .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbID)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jbnEliminar)))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jlbTitulo)
-                .addGap(76, 76, 76))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(42, 42, 42)
-                    .addComponent(jbnBuscar)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbnVolver)
-                    .addGap(77, 77, 77)))
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jlbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlbDescripcionServicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbPrecioServicio)
-                    .addComponent(jlbID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jlbTipoServicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbMantPreventivo)
-                    .addComponent(jrbMantCorrectivo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jbnEliminar)
-                .addGap(28, 28, 28))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(302, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbnVolver)
-                        .addComponent(jbnBuscar))
-                    .addGap(27, 27, 27)))
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbnEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbnBuscar;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JButton jbnEliminar;
     private javax.swing.JButton jbnVolver;
-    private javax.swing.JLabel jlbDescripcionServicio;
     private javax.swing.JLabel jlbID;
-    private javax.swing.JLabel jlbPrecioServicio;
-    private javax.swing.JLabel jlbTipoServicio;
     private javax.swing.JLabel jlbTitulo;
-    private javax.swing.JRadioButton jrbMantCorrectivo;
-    private javax.swing.JRadioButton jrbMantPreventivo;
-    private javax.swing.JTextArea jtaDescripcionServicio;
     private javax.swing.JTextField jtfID;
-    private javax.swing.JTextField jtfPrecioServicio;
     // End of variables declaration//GEN-END:variables
 }

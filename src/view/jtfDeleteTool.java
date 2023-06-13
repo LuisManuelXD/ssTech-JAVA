@@ -26,20 +26,12 @@ public class jtfDeleteTool extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDesktopPane2 = new javax.swing.JDesktopPane();
         jlbTitulo = new javax.swing.JLabel();
-        jbnVolver = new javax.swing.JButton();
-        jtfNombreHerramienta = new javax.swing.JTextField();
         jlbID = new javax.swing.JLabel();
         jtfID = new javax.swing.JTextField();
-        jlbTipo = new javax.swing.JLabel();
-        jrbConsumible = new javax.swing.JRadioButton();
-        jrbUtilizable = new javax.swing.JRadioButton();
-        jlbCantidad = new javax.swing.JLabel();
-        jlbNumero = new javax.swing.JLabel();
-        jsbCantidadBarra = new javax.swing.JScrollBar();
+        jbnVolver = new javax.swing.JButton();
         jbnEliminar = new javax.swing.JButton();
-        jlbNombreHerramienta = new javax.swing.JLabel();
-        jbnBuscar = new javax.swing.JButton();
 
         setIconifiable(true);
         setMaximizable(true);
@@ -47,141 +39,102 @@ public class jtfDeleteTool extends javax.swing.JInternalFrame {
         setTitle("Eliminar Herramienta");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
-        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
         jlbTitulo.setText("Eliminar una herramienta");
 
-        jbnVolver.setText("Volver");
-        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jtfNombreHerramienta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jlbID.setForeground(new java.awt.Color(0, 102, 102));
         jlbID.setText("ID:");
 
+        jtfID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtfID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jlbTipo.setForeground(new java.awt.Color(0, 102, 102));
-        jlbTipo.setText("Tipo");
+        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
+        jbnVolver.setText("Volver");
+        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jrbConsumible.setForeground(new java.awt.Color(0, 102, 102));
-        jrbConsumible.setText("Consumible");
-
-        jrbUtilizable.setForeground(new java.awt.Color(0, 102, 102));
-        jrbUtilizable.setText("Utilizable");
-
-        jlbCantidad.setForeground(new java.awt.Color(0, 102, 102));
-        jlbCantidad.setText("Cantidad");
-
-        jlbNumero.setForeground(new java.awt.Color(0, 102, 102));
-        jlbNumero.setText("#");
-
-        jsbCantidadBarra.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
-        jsbCantidadBarra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
+        jbnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEliminar.setForeground(new java.awt.Color(0, 102, 102));
         jbnEliminar.setText("Eliminar");
         jbnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jbnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbnEliminarActionPerformed(evt);
+            }
+        });
 
-        jlbNombreHerramienta.setForeground(new java.awt.Color(0, 102, 102));
-        jlbNombreHerramienta.setText("Nombre de la herramienta");
+        jDesktopPane2.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane2.setLayer(jbnEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jbnBuscar.setText("Buscar");
-        jbnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
+        jDesktopPane2.setLayout(jDesktopPane2Layout);
+        jDesktopPane2Layout.setHorizontalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPane2Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jDesktopPane2Layout.createSequentialGroup()
+                        .addComponent(jbnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane2Layout.createSequentialGroup()
+                        .addComponent(jlbID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(jlbTitulo)
+                .addGap(43, 43, 43))
+        );
+        jDesktopPane2Layout.setVerticalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbTitulo)
+                .addGap(36, 36, 36)
+                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlbID)
+                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnEliminar)
+                    .addComponent(jbnVolver))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlbNombreHerramienta)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jlbID)
-                                            .addComponent(jlbCantidad))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jrbConsumible)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jrbUtilizable))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addComponent(jlbTipo)
-                                                        .addGap(55, 55, 55))))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(jlbNumero)
-                                                .addGap(0, 0, Short.MAX_VALUE))))
-                                    .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jlbTitulo)))
-                .addContainerGap(72, Short.MAX_VALUE))
+            .addComponent(jDesktopPane2)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jlbTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlbNombreHerramienta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfNombreHerramienta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbID)
-                    .addComponent(jlbTipo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jrbConsumible)
-                    .addComponent(jrbUtilizable))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbCantidad)
-                    .addComponent(jlbNumero))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jsbCantidadBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnEliminar)
-                    .addComponent(jbnVolver)
-                    .addComponent(jbnBuscar))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jDesktopPane2))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbnEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jbnBuscar;
+    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JButton jbnEliminar;
     private javax.swing.JButton jbnVolver;
-    private javax.swing.JLabel jlbCantidad;
     private javax.swing.JLabel jlbID;
-    private javax.swing.JLabel jlbNombreHerramienta;
-    private javax.swing.JLabel jlbNumero;
-    private javax.swing.JLabel jlbTipo;
     private javax.swing.JLabel jlbTitulo;
-    private javax.swing.JRadioButton jrbConsumible;
-    private javax.swing.JRadioButton jrbUtilizable;
-    private javax.swing.JScrollBar jsbCantidadBarra;
     private javax.swing.JTextField jtfID;
-    private javax.swing.JTextField jtfNombreHerramienta;
     // End of variables declaration//GEN-END:variables
 }
