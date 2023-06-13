@@ -27,204 +27,111 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         btngEstados = new javax.swing.ButtonGroup();
-        lblEstado = new javax.swing.JLabel();
-        lblFechaSalida = new javax.swing.JLabel();
-        txtCliente = new javax.swing.JTextField();
-        txtNCelular = new javax.swing.JTextField();
-        txtFSalida = new javax.swing.JTextField();
-        txtFEntrega = new javax.swing.JTextField();
-        rbtnEspera = new javax.swing.JRadioButton();
-        rbtnProceso = new javax.swing.JRadioButton();
-        lblFechaEntrega = new javax.swing.JLabel();
-        rbtnTerminado = new javax.swing.JRadioButton();
-        txtNPedido = new javax.swing.JTextField();
-        lblEliminar = new javax.swing.JLabel();
-        lblPedido = new javax.swing.JLabel();
-        lblCliente = new javax.swing.JLabel();
-        lblCelular = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
-        btnReturn = new javax.swing.JButton();
-        btnFiller = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jbnVolver = new javax.swing.JButton();
+        jlbTitulo = new javax.swing.JLabel();
+        jlbID = new javax.swing.JLabel();
+        jtfID = new javax.swing.JTextField();
+        jbnEliminar = new javax.swing.JButton();
 
         setTitle("Eliminar - Orden de Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
-        lblEstado.setForeground(new java.awt.Color(0, 102, 102));
-        lblEstado.setText("Estado:");
+        jbnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnVolver.setForeground(new java.awt.Color(0, 102, 102));
+        jbnVolver.setText("Volver");
+        jbnVolver.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFechaSalida.setForeground(new java.awt.Color(0, 102, 102));
-        lblFechaSalida.setText("Fecha de pedido:");
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTitulo.setText("Eliminar Orden de Servicio");
 
-        btngEstados.add(rbtnEspera);
-        rbtnEspera.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        rbtnEspera.setForeground(new java.awt.Color(102, 102, 102));
-        rbtnEspera.setText("En espera");
+        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jlbID.setForeground(new java.awt.Color(0, 102, 102));
+        jlbID.setText("Número de Pedido");
 
-        btngEstados.add(rbtnProceso);
-        rbtnProceso.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        rbtnProceso.setForeground(new java.awt.Color(102, 102, 102));
-        rbtnProceso.setText("En proceso");
-        rbtnProceso.addActionListener(new java.awt.event.ActionListener() {
+        jtfID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtfID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jbnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEliminar.setForeground(new java.awt.Color(0, 102, 102));
+        jbnEliminar.setText("Eliminar");
+        jbnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jbnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtnProcesoActionPerformed(evt);
+                jbnEliminarActionPerformed(evt);
             }
         });
 
-        lblFechaEntrega.setForeground(new java.awt.Color(0, 102, 102));
-        lblFechaEntrega.setText("Fecha de entrega:");
+        jDesktopPane1.setLayer(jbnVolver, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jlbID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jtfID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jbnEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        btngEstados.add(rbtnTerminado);
-        rbtnTerminado.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        rbtnTerminado.setForeground(new java.awt.Color(102, 102, 102));
-        rbtnTerminado.setText("Terminado");
-        rbtnTerminado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtnTerminadoActionPerformed(evt);
-            }
-        });
-
-        lblEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblEliminar.setForeground(new java.awt.Color(0, 102, 102));
-        lblEliminar.setText("Eliminar");
-
-        lblPedido.setForeground(new java.awt.Color(0, 102, 102));
-        lblPedido.setText("Número de pedido:");
-
-        lblCliente.setForeground(new java.awt.Color(0, 102, 102));
-        lblCliente.setText("Cliente:");
-
-        lblCelular.setForeground(new java.awt.Color(0, 102, 102));
-        lblCelular.setText("Número de celular:");
-
-        btnDelete.setText("Eliminar");
-
-        btnReturn.setText("Volver");
-
-        btnFiller.setText("Rellenar");
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addGap(0, 82, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jlbID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlbTitulo)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jbnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)))
+                .addGap(17, 17, 17))
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbTitulo)
+                .addGap(30, 30, 30)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlbID)
+                    .addComponent(jtfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnEliminar)
+                    .addComponent(jbnVolver))
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblCelular)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblPedido)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblEstado)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtnEspera)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtnProceso)
-                        .addGap(18, 18, 18)
-                        .addComponent(rbtnTerminado))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblFechaSalida)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblFechaEntrega)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(lblEliminar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(btnFiller)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(btnDelete)
-                .addGap(46, 46, 46)
-                .addComponent(btnReturn)
-                .addGap(45, 45, 45))
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEliminar)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPedido)
-                    .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCliente)
-                    .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCelular)
-                    .addComponent(txtNCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEstado)
-                    .addComponent(rbtnEspera)
-                    .addComponent(rbtnProceso)
-                    .addComponent(rbtnTerminado))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaSalida)
-                    .addComponent(txtFSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaEntrega)
-                    .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete)
-                    .addComponent(btnReturn)
-                    .addComponent(btnFiller))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(jDesktopPane1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rbtnProcesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnProcesoActionPerformed
-
-    }//GEN-LAST:event_rbtnProcesoActionPerformed
-
-    private void rbtnTerminadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTerminadoActionPerformed
+    private void jbnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbtnTerminadoActionPerformed
+    }//GEN-LAST:event_jbnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnFiller;
-    private javax.swing.JButton btnReturn;
     private javax.swing.ButtonGroup btngEstados;
-    private javax.swing.JLabel lblCelular;
-    private javax.swing.JLabel lblCliente;
-    private javax.swing.JLabel lblEliminar;
-    private javax.swing.JLabel lblEstado;
-    private javax.swing.JLabel lblFechaEntrega;
-    private javax.swing.JLabel lblFechaSalida;
-    private javax.swing.JLabel lblPedido;
-    private javax.swing.JRadioButton rbtnEspera;
-    private javax.swing.JRadioButton rbtnProceso;
-    private javax.swing.JRadioButton rbtnTerminado;
-    private javax.swing.JTextField txtCliente;
-    private javax.swing.JTextField txtFEntrega;
-    private javax.swing.JTextField txtFSalida;
-    private javax.swing.JTextField txtNCelular;
-    private javax.swing.JTextField txtNPedido;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton jbnEliminar;
+    private javax.swing.JButton jbnVolver;
+    private javax.swing.JLabel jlbID;
+    private javax.swing.JLabel jlbTitulo;
+    private javax.swing.JTextField jtfID;
     // End of variables declaration//GEN-END:variables
 }
