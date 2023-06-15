@@ -4,18 +4,16 @@
  */
 package view;
 
-import javax.swing.ImageIcon;
-
 /**
  *
- * @author nerif
+ * @author luisf
  */
-public class ServiceOrder_Search extends javax.swing.JInternalFrame {
+public class Service_Search extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ServiceOrder_Show
+     * Creates new form jtfSearchService
      */
-    public ServiceOrder_Search() {
+    public Service_Search() {
         initComponents();
     }
 
@@ -29,27 +27,23 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableService = new javax.swing.JTable();
+        jlbTitulo = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableServiceOrder = new javax.swing.JTable();
-        jlbTitulo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setTitle("Buscar - Orden de Servicio");
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Buscar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
+        setPreferredSize(new java.awt.Dimension(386, 355));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(0, 102, 102));
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
-        btnBack.setToolTipText("Regresar");
-
-        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
-
-        jTableServiceOrder.setModel(new javax.swing.table.DefaultTableModel(
+        jTableService.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -60,11 +54,18 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTableServiceOrder);
+        jScrollPane1.setViewportView(jTableService);
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jlbTitulo.setText("Buscar Orden Servicio");
+        jlbTitulo.setText("Buscar Servicio");
+
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 102, 102));
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
+        btnBack.setToolTipText("Regresar");
+
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,7 +87,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSearch))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(114, 114, 114)
                         .addComponent(jlbTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -103,7 +104,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +127,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableServiceOrder;
+    private javax.swing.JTable jTableService;
     private javax.swing.JLabel jlbTitulo;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
