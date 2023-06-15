@@ -9,7 +9,6 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
     }
 
     @SuppressWarnings("unchecked")
