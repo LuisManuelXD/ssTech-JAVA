@@ -6,8 +6,16 @@ public class Client {
     private int age;
     private String mail;
     private String cellPhone;
+    
+    Client next;
 
-    public Client() {
+    public Client(String name, String lastName, int age, String mail, String cellPhone) {
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
+        this.mail = mail;
+        this.cellPhone = cellPhone;
+        next = null;
     }
 
     public String getName() {
@@ -48,5 +56,13 @@ public class Client {
 
     public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
+    }
+
+    public Client getNext() {
+        return next;
+    }
+
+    public void setNext(Client next) {
+        this.next = next;
     }
 }

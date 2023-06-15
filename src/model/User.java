@@ -6,7 +6,7 @@ public class User {
     private int role;
     private String mail;
     private String cellular;
-
+    
     public User() {
     }
 
