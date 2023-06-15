@@ -1,30 +1,20 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JInternalFrame;
-import javax.swing.JPanel;
-
 
 /**
  *
  * @author Beto
  */
-public class Menu extends javax.swing.JInternalFrame {
+public class Menu extends javax.swing.JFrame {
 
-    
-    FondoPanel fondo = new FondoPanel();
-    
-    
+    /**
+     * Creates new form Menu
+     */
     public Menu() {
         initComponents();
-
-        this.setContentPane(fondo);
     }
 
     /**
@@ -36,216 +26,333 @@ public class Menu extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jdpMenu = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
+        jbnEditar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new FondoPanel();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem21 = new javax.swing.JMenuItem();
-        jMenuItem22 = new javax.swing.JMenuItem();
-        jMenuItem24 = new javax.swing.JMenuItem();
-        jMenuItem25 = new javax.swing.JMenuItem();
+        jMenuRefacts = new javax.swing.JMenu();
+        jMIAddRefacts = new javax.swing.JMenuItem();
+        jMIEditRefacts = new javax.swing.JMenuItem();
+        jMISearchRefacts = new javax.swing.JMenuItem();
+        jMIDeleteRefacts = new javax.swing.JMenuItem();
+        jMenuServiceOrder = new javax.swing.JMenu();
+        jMIAddOrderService = new javax.swing.JMenuItem();
+        jMIEditOrderService = new javax.swing.JMenuItem();
+        jMISearchOrderService = new javax.swing.JMenuItem();
+        jMIDeleteOrderService = new javax.swing.JMenuItem();
+        jMenuServices = new javax.swing.JMenu();
+        jMIAddService = new javax.swing.JMenuItem();
+        jMIEditService = new javax.swing.JMenuItem();
+        jMISearchService = new javax.swing.JMenuItem();
+        jMIDeleteService = new javax.swing.JMenuItem();
+        jMenuTools = new javax.swing.JMenu();
+        jMIAddTool = new javax.swing.JMenuItem();
+        jMIEditTool = new javax.swing.JMenuItem();
+        jMISearchTool = new javax.swing.JMenuItem();
+        jMIDeleteTool = new javax.swing.JMenuItem();
+        jMenuClient = new javax.swing.JMenu();
+        jMIAddClient = new javax.swing.JMenuItem();
+        jMIEditClient = new javax.swing.JMenuItem();
+        jMISearchClient = new javax.swing.JMenuItem();
+        jMIDeleteClient = new javax.swing.JMenuItem();
 
-        jLabel1.setText("jLabel1");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setForeground(new java.awt.Color(255, 255, 255));
-        setTitle(" Menú");
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
-        setInheritsPopupMenu(true);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sstech.png"))); // NOI18N
 
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbnEditar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log out.png"))); // NOI18N
+        jbnEditar1.setText("Salir");
+        jbnEditar1.setToolTipText("Salir");
 
-        jButton1.setText("Salir");
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setText("Menú");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(jButton1)
-                .addContainerGap(212, Short.MAX_VALUE))
+        jdpMenu.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpMenu.setLayer(jbnEditar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpMenu.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jdpMenuLayout = new javax.swing.GroupLayout(jdpMenu);
+        jdpMenu.setLayout(jdpMenuLayout);
+        jdpMenuLayout.setHorizontalGroup(
+            jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdpMenuLayout.createSequentialGroup()
+                .addGroup(jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jdpMenuLayout.createSequentialGroup()
+                        .addGap(343, 343, 343)
+                        .addComponent(jbnEditar1))
+                    .addGroup(jdpMenuLayout.createSequentialGroup()
+                        .addGap(355, 355, 355)
+                        .addComponent(jLabel1))
+                    .addGroup(jdpMenuLayout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(22, 22, 22))
+        jdpMenuLayout.setVerticalGroup(
+            jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jdpMenuLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 629, Short.MAX_VALUE)
+                .addComponent(jbnEditar1)
+                .addGap(62, 62, 62))
         );
 
-        jMenu1.setBackground(new java.awt.Color(204, 204, 204));
-        jMenu1.setForeground(new java.awt.Color(204, 204, 204));
-        jMenu1.setText("Refacciones");
-        jMenu1.setToolTipText("");
-        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refacts.png"))); // NOI18N
+        jMenuRefacts.setText("Refacciones");
+        jMenuRefacts.setToolTipText("");
+        jMenuRefacts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem1.setText("Registrar");
-        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem1.setFocusPainted(true);
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMIAddRefacts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIAddRefacts.setForeground(new java.awt.Color(0, 102, 102));
+        jMIAddRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jMIAddRefacts.setText("Registrar");
+        jMIAddRefacts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMIAddRefacts.setFocusPainted(true);
+        jMIAddRefacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMIAddRefactsActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenuRefacts.add(jMIAddRefacts);
 
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem2.setText("Editar");
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem4.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem4.setText("Buscar");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMIEditRefacts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIEditRefacts.setForeground(new java.awt.Color(0, 102, 102));
+        jMIEditRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jMIEditRefacts.setText("Editar");
+        jMIEditRefacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMIEditRefactsActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenuRefacts.add(jMIEditRefacts);
 
-        jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem5.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem5.setText("Eliminar");
-        jMenu1.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Orden de Servicio");
-
-        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem6.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem6.setText("Registrar");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        jMISearchRefacts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMISearchRefacts.setForeground(new java.awt.Color(0, 102, 102));
+        jMISearchRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search2.png"))); // NOI18N
+        jMISearchRefacts.setText("Buscar");
+        jMISearchRefacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                jMISearchRefactsActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        jMenuRefacts.add(jMISearchRefacts);
 
-        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem7.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem7.setText("Editar");
-        jMenu2.add(jMenuItem7);
-
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem9.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem9.setText("Buscar");
-        jMenu2.add(jMenuItem9);
-
-        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem10.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem10.setText("Eliminar");
-        jMenu2.add(jMenuItem10);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Servicios");
-
-        jMenuItem11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem11.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem11.setText("Registrar");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        jMIDeleteRefacts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIDeleteRefacts.setForeground(new java.awt.Color(0, 102, 102));
+        jMIDeleteRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
+        jMIDeleteRefacts.setText("Eliminar");
+        jMIDeleteRefacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                jMIDeleteRefactsActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem11);
+        jMenuRefacts.add(jMIDeleteRefacts);
 
-        jMenuItem12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem12.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem12.setText("Editar");
-        jMenu3.add(jMenuItem12);
+        jMenuBar1.add(jMenuRefacts);
 
-        jMenuItem14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem14.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem14.setText("Buscar");
-        jMenu3.add(jMenuItem14);
+        jMenuServiceOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/serviceorder.png"))); // NOI18N
+        jMenuServiceOrder.setText("Orden de Servicio");
 
-        jMenuItem15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem15.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem15.setText("Eliminar");
-        jMenu3.add(jMenuItem15);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Herramientas");
-
-        jMenuItem16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem16.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem16.setText("Registrar");
-        jMenu4.add(jMenuItem16);
-
-        jMenuItem17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem17.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem17.setText("Editar");
-        jMenu4.add(jMenuItem17);
-
-        jMenuItem19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem19.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem19.setText("Buscar");
-        jMenu4.add(jMenuItem19);
-
-        jMenuItem20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem20.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem20.setText("Eliminar");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+        jMIAddOrderService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIAddOrderService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIAddOrderService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jMIAddOrderService.setText("Registrar");
+        jMIAddOrderService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
+                jMIAddOrderServiceActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem20);
+        jMenuServiceOrder.add(jMIAddOrderService);
 
-        jMenuBar1.add(jMenu4);
+        jMIEditOrderService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIEditOrderService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIEditOrderService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jMIEditOrderService.setText("Editar");
+        jMIEditOrderService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEditOrderServiceActionPerformed(evt);
+            }
+        });
+        jMenuServiceOrder.add(jMIEditOrderService);
 
-        jMenu5.setForeground(new java.awt.Color(204, 204, 204));
-        jMenu5.setText("Cliente");
+        jMISearchOrderService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMISearchOrderService.setForeground(new java.awt.Color(0, 102, 102));
+        jMISearchOrderService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search2.png"))); // NOI18N
+        jMISearchOrderService.setText("Buscar");
+        jMISearchOrderService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISearchOrderServiceActionPerformed(evt);
+            }
+        });
+        jMenuServiceOrder.add(jMISearchOrderService);
 
-        jMenuItem21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem21.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem21.setText("Registrar");
-        jMenu5.add(jMenuItem21);
+        jMIDeleteOrderService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIDeleteOrderService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIDeleteOrderService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
+        jMIDeleteOrderService.setText("Eliminar");
+        jMIDeleteOrderService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIDeleteOrderServiceActionPerformed(evt);
+            }
+        });
+        jMenuServiceOrder.add(jMIDeleteOrderService);
 
-        jMenuItem22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem22.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem22.setText("Editar");
-        jMenu5.add(jMenuItem22);
+        jMenuBar1.add(jMenuServiceOrder);
 
-        jMenuItem24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem24.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem24.setText("Buscar");
-        jMenu5.add(jMenuItem24);
+        jMenuServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
+        jMenuServices.setText("Servicios");
 
-        jMenuItem25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem25.setForeground(new java.awt.Color(0, 102, 102));
-        jMenuItem25.setText("Eliminar");
-        jMenu5.add(jMenuItem25);
+        jMIAddService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIAddService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIAddService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jMIAddService.setText("Registrar");
+        jMIAddService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIAddServiceActionPerformed(evt);
+            }
+        });
+        jMenuServices.add(jMIAddService);
 
-        jMenuBar1.add(jMenu5);
+        jMIEditService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIEditService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIEditService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jMIEditService.setText("Editar");
+        jMIEditService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEditServiceActionPerformed(evt);
+            }
+        });
+        jMenuServices.add(jMIEditService);
+
+        jMISearchService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMISearchService.setForeground(new java.awt.Color(0, 102, 102));
+        jMISearchService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search2.png"))); // NOI18N
+        jMISearchService.setText("Buscar");
+        jMISearchService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISearchServiceActionPerformed(evt);
+            }
+        });
+        jMenuServices.add(jMISearchService);
+
+        jMIDeleteService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIDeleteService.setForeground(new java.awt.Color(0, 102, 102));
+        jMIDeleteService.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
+        jMIDeleteService.setText("Eliminar");
+        jMIDeleteService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIDeleteServiceActionPerformed(evt);
+            }
+        });
+        jMenuServices.add(jMIDeleteService);
+
+        jMenuBar1.add(jMenuServices);
+
+        jMenuTools.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tools.png"))); // NOI18N
+        jMenuTools.setText("Herramientas");
+
+        jMIAddTool.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIAddTool.setForeground(new java.awt.Color(0, 102, 102));
+        jMIAddTool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jMIAddTool.setText("Registrar");
+        jMIAddTool.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIAddToolActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMIAddTool);
+
+        jMIEditTool.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIEditTool.setForeground(new java.awt.Color(0, 102, 102));
+        jMIEditTool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jMIEditTool.setText("Editar");
+        jMIEditTool.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEditToolActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMIEditTool);
+
+        jMISearchTool.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMISearchTool.setForeground(new java.awt.Color(0, 102, 102));
+        jMISearchTool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search2.png"))); // NOI18N
+        jMISearchTool.setText("Buscar");
+        jMISearchTool.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISearchToolActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMISearchTool);
+
+        jMIDeleteTool.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIDeleteTool.setForeground(new java.awt.Color(0, 102, 102));
+        jMIDeleteTool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
+        jMIDeleteTool.setText("Eliminar");
+        jMIDeleteTool.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIDeleteToolActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMIDeleteTool);
+
+        jMenuBar1.add(jMenuTools);
+
+        jMenuClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/client.png"))); // NOI18N
+        jMenuClient.setText("Cliente");
+
+        jMIAddClient.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIAddClient.setForeground(new java.awt.Color(0, 102, 102));
+        jMIAddClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jMIAddClient.setText("Registrar");
+        jMIAddClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIAddClientActionPerformed(evt);
+            }
+        });
+        jMenuClient.add(jMIAddClient);
+
+        jMIEditClient.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIEditClient.setForeground(new java.awt.Color(0, 102, 102));
+        jMIEditClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jMIEditClient.setText("Editar");
+        jMIEditClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEditClientActionPerformed(evt);
+            }
+        });
+        jMenuClient.add(jMIEditClient);
+
+        jMISearchClient.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMISearchClient.setForeground(new java.awt.Color(0, 102, 102));
+        jMISearchClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search2.png"))); // NOI18N
+        jMISearchClient.setText("Buscar");
+        jMISearchClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISearchClientActionPerformed(evt);
+            }
+        });
+        jMenuClient.add(jMISearchClient);
+
+        jMIDeleteClient.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMIDeleteClient.setForeground(new java.awt.Color(0, 102, 102));
+        jMIDeleteClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
+        jMIDeleteClient.setText("Eliminar");
+        jMIDeleteClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIDeleteClientActionPerformed(evt);
+            }
+        });
+        jMenuClient.add(jMIDeleteClient);
+
+        jMenuBar1.add(jMenuClient);
 
         setJMenuBar(jMenuBar1);
 
@@ -253,70 +360,140 @@ public class Menu extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jdpMenu)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jdpMenu)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void jMIAddRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddRefactsActionPerformed
+        Refacts_Register_Edit rafactsRegister = new Refacts_Register_Edit();
+        jdpMenu.add(rafactsRegister);
+        rafactsRegister.show();
+    }//GEN-LAST:event_jMIAddRefactsActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    private void jMISearchRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchRefactsActionPerformed
+        Refacts_Search rafactsSearch = new Refacts_Search();
+        jdpMenu.add(rafactsSearch);
+        rafactsSearch.show();
+    }//GEN-LAST:event_jMISearchRefactsActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    private void jMIAddOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddOrderServiceActionPerformed
+        ServiceOrder_Register_Edit serviceOrderRegister = new ServiceOrder_Register_Edit();
+        jdpMenu.add(serviceOrderRegister);
+        serviceOrderRegister.show();
+    }//GEN-LAST:event_jMIAddOrderServiceActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    private void jMIAddServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddServiceActionPerformed
+        Service_Register_Edit serviceRegister = new Service_Register_Edit();
+        jdpMenu.add(serviceRegister);
+        serviceRegister.show();
+    }//GEN-LAST:event_jMIAddServiceActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    private void jMIDeleteToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteToolActionPerformed
+        Tool_Delete toolDelete = new Tool_Delete();
+        jdpMenu.add(toolDelete);
+        toolDelete.show();
+    }//GEN-LAST:event_jMIDeleteToolActionPerformed
 
+    private void jMISearchToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchToolActionPerformed
+        Tool_Search toolSearch = new Tool_Search();
+        jdpMenu.add(toolSearch);
+        toolSearch.show();
+    }//GEN-LAST:event_jMISearchToolActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem24;
-    private javax.swing.JMenuItem jMenuItem25;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+    private void jMIEditRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditRefactsActionPerformed
+        Refacts_Register_Edit rafactsEdit = new Refacts_Register_Edit();
+        jdpMenu.add(rafactsEdit);
+        rafactsEdit.show();
+    }//GEN-LAST:event_jMIEditRefactsActionPerformed
 
-     public static void main(String args[]) {
+    private void jMIDeleteRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteRefactsActionPerformed
+        Refacts_Delete rafactsDelete = new Refacts_Delete();
+        jdpMenu.add(rafactsDelete);
+        rafactsDelete.show();
+    }//GEN-LAST:event_jMIDeleteRefactsActionPerformed
+
+    private void jMIEditOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditOrderServiceActionPerformed
+        ServiceOrder_Register_Edit serviceOrderEdit = new ServiceOrder_Register_Edit();
+        jdpMenu.add(serviceOrderEdit);
+        serviceOrderEdit.show();
+    }//GEN-LAST:event_jMIEditOrderServiceActionPerformed
+
+    private void jMISearchOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchOrderServiceActionPerformed
+        ServiceOrder_Search serviceOrderSearch = new ServiceOrder_Search();
+        jdpMenu.add(serviceOrderSearch);
+        serviceOrderSearch.show();
+    }//GEN-LAST:event_jMISearchOrderServiceActionPerformed
+
+    private void jMIDeleteOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteOrderServiceActionPerformed
+        ServiceOrder_Delete serviceOrderDelete  = new ServiceOrder_Delete();
+        jdpMenu.add(serviceOrderDelete);
+        serviceOrderDelete.show();
+    }//GEN-LAST:event_jMIDeleteOrderServiceActionPerformed
+
+    private void jMIEditServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditServiceActionPerformed
+        Service_Register_Edit serviceEdit = new Service_Register_Edit();
+        jdpMenu.add(serviceEdit);
+        serviceEdit.show();
+    }//GEN-LAST:event_jMIEditServiceActionPerformed
+
+    private void jMISearchServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchServiceActionPerformed
+        Service_Search serviceSearch = new Service_Search();
+        jdpMenu.add(serviceSearch);
+        serviceSearch.show();
+    }//GEN-LAST:event_jMISearchServiceActionPerformed
+
+    private void jMIDeleteServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteServiceActionPerformed
+        Service_Delete serviceDelete = new Service_Delete();
+        jdpMenu.add(serviceDelete);
+        serviceDelete.show();
+    }//GEN-LAST:event_jMIDeleteServiceActionPerformed
+
+    private void jMIAddToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddToolActionPerformed
+        Tool_Register_Edit toolRegister = new Tool_Register_Edit();
+        jdpMenu.add(toolRegister);
+        toolRegister.show();
+    }//GEN-LAST:event_jMIAddToolActionPerformed
+
+    private void jMIEditToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditToolActionPerformed
+        Tool_Register_Edit toolEdit = new Tool_Register_Edit();
+        jdpMenu.add(toolEdit);
+        toolEdit.show();
+    }//GEN-LAST:event_jMIEditToolActionPerformed
+
+    private void jMIAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddClientActionPerformed
+        Client_Register_Edit clientRegister = new Client_Register_Edit();
+        jdpMenu.add(clientRegister);
+        clientRegister.show();
+    }//GEN-LAST:event_jMIAddClientActionPerformed
+
+    private void jMIEditClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditClientActionPerformed
+        Client_Register_Edit clientEdit = new Client_Register_Edit();
+        jdpMenu.add(clientEdit);
+        clientEdit.show();
+    }//GEN-LAST:event_jMIEditClientActionPerformed
+
+    private void jMISearchClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchClientActionPerformed
+        Client_Search clientSearch = new Client_Search();
+        jdpMenu.add(clientSearch);
+        clientSearch.show();
+    }//GEN-LAST:event_jMISearchClientActionPerformed
+
+    private void jMIDeleteClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteClientActionPerformed
+        Client_Delete clientDelete = new Client_Delete();
+        jdpMenu.add(clientDelete);
+        clientDelete.show();
+    }//GEN-LAST:event_jMIDeleteClientActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -330,36 +507,54 @@ public class Menu extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFLogin().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
-    class FondoPanel extends JPanel{
-    
-    private Image imagen;
-    
-    public void piant(Graphics g){
-        
-        imagen = new ImageIcon(getClass().getResource("/img/fondo.jpg")).getImage();
-        g.drawImage(imagen,0,0,getWidth(), getHeight(), this);
-        setOpaque(false);
-        
-        super.paint(g);
-                
-    }
-    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuItem jMIAddClient;
+    private javax.swing.JMenuItem jMIAddOrderService;
+    private javax.swing.JMenuItem jMIAddRefacts;
+    private javax.swing.JMenuItem jMIAddService;
+    private javax.swing.JMenuItem jMIAddTool;
+    private javax.swing.JMenuItem jMIDeleteClient;
+    private javax.swing.JMenuItem jMIDeleteOrderService;
+    private javax.swing.JMenuItem jMIDeleteRefacts;
+    private javax.swing.JMenuItem jMIDeleteService;
+    private javax.swing.JMenuItem jMIDeleteTool;
+    private javax.swing.JMenuItem jMIEditClient;
+    private javax.swing.JMenuItem jMIEditOrderService;
+    private javax.swing.JMenuItem jMIEditRefacts;
+    private javax.swing.JMenuItem jMIEditService;
+    private javax.swing.JMenuItem jMIEditTool;
+    private javax.swing.JMenuItem jMISearchClient;
+    private javax.swing.JMenuItem jMISearchOrderService;
+    private javax.swing.JMenuItem jMISearchRefacts;
+    private javax.swing.JMenuItem jMISearchService;
+    private javax.swing.JMenuItem jMISearchTool;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuClient;
+    private javax.swing.JMenu jMenuRefacts;
+    private javax.swing.JMenu jMenuServiceOrder;
+    private javax.swing.JMenu jMenuServices;
+    private javax.swing.JMenu jMenuTools;
+    private javax.swing.JButton jbnEditar1;
+    private javax.swing.JDesktopPane jdpMenu;
+    // End of variables declaration//GEN-END:variables
 }
