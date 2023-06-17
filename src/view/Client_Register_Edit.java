@@ -42,6 +42,8 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         txtName = new javax.swing.JTextField();
         lblLastName = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Registrar / Editar Cliente");
         setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N

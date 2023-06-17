@@ -35,9 +35,8 @@ public class Tool_Search extends javax.swing.JInternalFrame {
         jlbTitulo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Buscar Herramienta");
         setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N

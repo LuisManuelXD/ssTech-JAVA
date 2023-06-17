@@ -34,6 +34,8 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Buscar - Refacciones");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 

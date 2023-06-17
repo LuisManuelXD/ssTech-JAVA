@@ -33,6 +33,8 @@ public class Client_Delete extends javax.swing.JInternalFrame {
         txtID = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Eliminar Clientes");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 

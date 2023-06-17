@@ -45,6 +45,8 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Registrar - Refacciones");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 

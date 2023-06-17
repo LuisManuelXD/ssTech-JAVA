@@ -33,6 +33,8 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
         jlbID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Eliminar - Refacciones");
         setToolTipText("");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N

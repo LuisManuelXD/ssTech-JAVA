@@ -46,9 +46,8 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         txtCost = new javax.swing.JTextField();
         jlbID2 = new javax.swing.JLabel();
 
+        setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Registrar Herramienta");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 

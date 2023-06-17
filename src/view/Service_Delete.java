@@ -33,9 +33,8 @@ public class Service_Delete extends javax.swing.JInternalFrame {
         jlbID = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
 
+        setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Eliminar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 

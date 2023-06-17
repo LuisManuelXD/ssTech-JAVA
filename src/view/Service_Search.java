@@ -34,9 +34,8 @@ public class Service_Search extends javax.swing.JInternalFrame {
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Buscar Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(386, 355));

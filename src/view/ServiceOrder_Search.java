@@ -37,6 +37,8 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         jlbTitulo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Buscar - Orden de Servicio");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
