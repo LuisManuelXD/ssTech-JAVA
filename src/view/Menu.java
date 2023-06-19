@@ -39,9 +39,9 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jdpMenu = new javax.swing.JDesktopPane();
-        jLabel2 = new javax.swing.JLabel();
-        jbnEditar1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jlbLogo = new javax.swing.JLabel();
+        jbnSalir = new javax.swing.JButton();
+        jlbTituloMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuRefacts = new javax.swing.JMenu();
         jMIAddRefacts = new javax.swing.JMenuItem();
@@ -72,26 +72,29 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sstech.png"))); // NOI18N
+        jdpMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jbnEditar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnEditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log out.png"))); // NOI18N
-        jbnEditar1.setText("Salir");
-        jbnEditar1.setToolTipText("Salir");
-        jbnEditar1.addActionListener(new java.awt.event.ActionListener() {
+        jlbLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sstech.png"))); // NOI18N
+
+        jbnSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log out.png"))); // NOI18N
+        jbnSalir.setText("Salir");
+        jbnSalir.setToolTipText("Salir");
+        jbnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnEditar1ActionPerformed(evt);
+                jbnSalirActionPerformed(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("Menú");
+        jlbTituloMenu.setBackground(new java.awt.Color(255, 255, 255));
+        jlbTituloMenu.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jlbTituloMenu.setForeground(new java.awt.Color(0, 102, 102));
+        jlbTituloMenu.setText("Menú");
 
-        jdpMenu.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jdpMenu.setLayer(jbnEditar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jdpMenu.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpMenu.setLayer(jlbLogo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpMenu.setLayer(jbnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpMenu.setLayer(jlbTituloMenu, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jdpMenuLayout = new javax.swing.GroupLayout(jdpMenu);
         jdpMenu.setLayout(jdpMenuLayout);
@@ -102,25 +105,27 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jdpMenuLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jLabel1))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(383, Short.MAX_VALUE))
+                        .addComponent(jlbTituloMenu))
+                    .addComponent(jlbLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(392, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(399, 399, 399))
         );
         jdpMenuLayout.setVerticalGroup(
             jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jdpMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jlbTituloMenu)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlbLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 483, Short.MAX_VALUE)
-                .addComponent(jbnEditar1)
+                .addComponent(jbnSalir)
                 .addGap(54, 54, 54))
         );
+
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jMenuRefacts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refacts.png"))); // NOI18N
         jMenuRefacts.setText("Refacciones");
@@ -177,6 +182,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuServiceOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/serviceorder.png"))); // NOI18N
         jMenuServiceOrder.setText("Orden de Servicio");
+        jMenuServiceOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMIAddOrderService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMIAddOrderService.setForeground(new java.awt.Color(0, 102, 102));
@@ -226,6 +232,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuServices.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
         jMenuServices.setText("Servicios");
+        jMenuServices.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMIAddService.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMIAddService.setForeground(new java.awt.Color(0, 102, 102));
@@ -275,6 +282,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuTools.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tools.png"))); // NOI18N
         jMenuTools.setText("Herramientas");
+        jMenuTools.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMIAddTool.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMIAddTool.setForeground(new java.awt.Color(0, 102, 102));
@@ -324,6 +332,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/client.png"))); // NOI18N
         jMenuClient.setText("Cliente");
+        jMenuClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jMIAddClient.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMIAddClient.setForeground(new java.awt.Color(0, 102, 102));
@@ -507,12 +516,12 @@ public class Menu extends javax.swing.JFrame {
         clientDelete.show();
     }//GEN-LAST:event_jMIDeleteClientActionPerformed
 
-    private void jbnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEditar1ActionPerformed
+    private void jbnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnSalirActionPerformed
         Login login = new Login();
         login.setIconImage(icono.getImage());
         login.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jbnEditar1ActionPerformed
+    }//GEN-LAST:event_jbnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -550,8 +559,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMIAddClient;
     private javax.swing.JMenuItem jMIAddOrderService;
     private javax.swing.JMenuItem jMIAddRefacts;
@@ -578,7 +585,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuServiceOrder;
     private javax.swing.JMenu jMenuServices;
     private javax.swing.JMenu jMenuTools;
-    private javax.swing.JButton jbnEditar1;
+    private javax.swing.JButton jbnSalir;
     private javax.swing.JDesktopPane jdpMenu;
+    private javax.swing.JLabel jlbLogo;
+    private javax.swing.JLabel jlbTituloMenu;
     // End of variables declaration//GEN-END:variables
 }

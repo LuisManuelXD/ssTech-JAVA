@@ -75,6 +75,7 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         rbtnMantCorrectivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbtnMantCorrectivo.setForeground(new java.awt.Color(204, 204, 204));
         rbtnMantCorrectivo.setText("Mantenimiento correctivo");
+        rbtnMantCorrectivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rbtnMantCorrectivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtnMantCorrectivoActionPerformed(evt);
@@ -89,21 +90,40 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         rbtnMantPreventivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbtnMantPreventivo.setForeground(new java.awt.Color(204, 204, 204));
         rbtnMantPreventivo.setText("Mantenimiento preventivo");
+        rbtnMantPreventivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(0, 102, 102));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         btnAdd.setToolTipText("Añadir");
+        btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEdit.setForeground(new java.awt.Color(0, 102, 102));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnEdit.setToolTipText("Editar");
+        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
         btnBack.setToolTipText("Regresar");
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,6 +218,19 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
     private void rbtnMantCorrectivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMantCorrectivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnMantCorrectivoActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        //Si se presiona, cerrara la ventana
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

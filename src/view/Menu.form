@@ -3,6 +3,11 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenuRefacts">
           <Properties>
@@ -96,6 +101,9 @@
               <Image iconType="3" name="/img/serviceorder.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Orden de Servicio"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMIAddOrderService">
@@ -174,6 +182,9 @@
               <Image iconType="3" name="/img/services.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Servicios"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMIAddService">
@@ -252,6 +263,9 @@
               <Image iconType="3" name="/img/tools.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Herramientas"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMIAddTool">
@@ -330,6 +344,9 @@
               <Image iconType="3" name="/img/client.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cliente"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMIAddClient">
@@ -442,6 +459,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="jdpMenu">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -451,15 +473,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbTituloMenu" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabel2" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="jlbLogo" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="383" max="32767" attributes="0"/>
+                  <EmptySpace pref="392" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jbnEditar1" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="jbnSalir" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="399" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -468,25 +490,25 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlbTituloMenu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="79" max="-2" attributes="0"/>
+                  <Component id="jlbLogo" min="-2" pref="79" max="-2" attributes="0"/>
                   <EmptySpace pref="483" max="32767" attributes="0"/>
-                  <Component id="jbnEditar1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbnSalir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jlbLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img/sstech.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jbnEditar1">
+        <Component class="javax.swing.JButton" name="jbnSalir">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
@@ -496,12 +518,15 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
             <Property name="toolTipText" type="java.lang.String" value="Salir"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbnEditar1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbnSalirActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="jlbTituloMenu">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

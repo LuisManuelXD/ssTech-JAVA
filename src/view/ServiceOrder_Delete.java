@@ -37,6 +37,7 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("Eliminar - Orden de Servicio");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -45,6 +46,11 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
         btnDelete.setForeground(new java.awt.Color(0, 102, 102));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
         btnDelete.setToolTipText("Eliminar");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,6 +60,11 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
         btnBack.setToolTipText("Regresar");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jlbID.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,6 +123,15 @@ public class ServiceOrder_Delete extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        //Si se presiona, cerrara la ventana
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

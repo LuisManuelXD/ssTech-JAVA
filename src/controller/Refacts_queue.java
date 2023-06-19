@@ -11,8 +11,8 @@ public class Refacts_queue {
         this.queue_r = null;
     }
     
-    
-    public void enqueue_C(int u, String p_n, double p, String p_c, boolean p_s){ //add function
+    //add function
+    public void enqueue_C(int u, String p_n, double p, String p_c, boolean p_s){ 
         Refacts newRefacts = new Refacts(u, p_n, p, p_c, p_s);
         
         if(queue_r == null){
