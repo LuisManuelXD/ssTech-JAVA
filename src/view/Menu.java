@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import controller.Client_queue;
@@ -9,6 +5,7 @@ import controller.Refacts_queue;
 import controller.ServiceOrder_stack;
 import controller.Service_stack;
 import controller.Tools_stack;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,9 +20,16 @@ public class Menu extends javax.swing.JFrame {
     
     Client_queue queue_c = new Client_queue();
     Refacts_queue queue_r = new Refacts_queue();
+    ImageIcon icono = new ImageIcon("src/img/logo.png");
     
     
     public Menu() {
+        this.setIconImage(icono.getImage());
+        initComponents();
+    }
+    
+    public Menu(String user) {
+        this.setIconImage(icono.getImage());
         initComponents();
     }
 
@@ -74,6 +78,11 @@ public class Menu extends javax.swing.JFrame {
         jbnEditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log out.png"))); // NOI18N
         jbnEditar1.setText("Salir");
         jbnEditar1.setToolTipText("Salir");
+        jbnEditar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbnEditar1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
@@ -98,8 +107,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(383, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdpMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbnEditar1)
-                .addGap(421, 421, 421))
+                .addComponent(jbnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(399, 399, 399))
         );
         jdpMenuLayout.setVerticalGroup(
             jdpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -497,6 +506,13 @@ public class Menu extends javax.swing.JFrame {
         jdpMenu.add(clientDelete);
         clientDelete.show();
     }//GEN-LAST:event_jMIDeleteClientActionPerformed
+
+    private void jbnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEditar1ActionPerformed
+        Login login = new Login();
+        login.setIconImage(icono.getImage());
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbnEditar1ActionPerformed
 
     /**
      * @param args the command line arguments
