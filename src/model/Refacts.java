@@ -50,7 +50,7 @@ public class Refacts {
         this.productClass = productClass;
     }
 
-    public String isProuctStatus() {
+    public String getProuctStatus() {
         return prouctStatus;
     }
 
