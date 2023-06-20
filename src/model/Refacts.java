@@ -5,11 +5,11 @@ public class Refacts {
     String productName;
     double price;
     String productClass;
-    boolean prouctStatus;
+    String prouctStatus;
     
     Refacts next;
 
-    public Refacts(int units, String productName, double price, String productClass, boolean prouctStatus) {
+    public Refacts(int units, String productName, double price, String productClass, String prouctStatus) {
         this.units = units;
         this.productName = productName;
         this.price = price;
@@ -50,11 +50,11 @@ public class Refacts {
         this.productClass = productClass;
     }
 
-    public boolean isProuctStatus() {
+    public String isProuctStatus() {
         return prouctStatus;
     }
 
-    public void setProuctStatus(boolean prouctStatus) {
+    public void setProuctStatus(String prouctStatus) {
         this.prouctStatus = prouctStatus;
     }
 

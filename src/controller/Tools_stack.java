@@ -25,12 +25,46 @@ public class Tools_stack {
         } //else
     }//add_T
     
-    public void search_T(){
-        
+    public void search_T(String wanted){
+        Tools aux = stack_t;
+        boolean find = false;
+        if(stack_t == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getId() == Integer.parseInt(wanted)) {
+                    System.out.println("\nNombre: " + aux.getName() + "\nId: " + aux.getId()+ "\nprecio: " + aux.getPrice()
+                + "\nTipo: " + aux.getType()+ "\nCantidad: " + aux.getAmount());
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
-    public void edit_T(){
-        
+    public void edit_T(String search, String name, String id, String price, int type, int amount){
+        Tools aux = stack_t;
+        boolean find = false;
+        if(stack_t == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getId() == Integer.parseInt(search)) {
+                    System.out.println("Ingrese los nuevos datos:");
+                    aux.setName(name);
+                    aux.setId(Integer.parseInt(id));
+                    aux.setPrice(Double.parseDouble(price));
+                    aux.setType(type);
+                    aux.setAmount(amount);
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
     public void pop_T(){

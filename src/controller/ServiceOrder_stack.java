@@ -24,12 +24,53 @@ public class ServiceOrder_stack {
         } //else
     } //add_C
     
-    public void search_SO(){
-        
+    public void search_SO(String wanted){
+        ServiceOrder aux = stack_so;
+        boolean find = false;
+        if(stack_so == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getOrderNumber() == wanted) {
+                    System.out.println("Datos de la orden de servicio:\nNumero de orden: " + aux.getOrderNumber()+ "\nCliente: " + aux.getClient()+ "\nNumero Celular: " + aux.getCellNumber()
+                + "\nEstado: " + aux.getState() + "\nFecha de la orden: " + aux.getOrderDate() + "\nFecha de entrega: " + aux.getDeliveryDate());
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
-    public void edit_SO(){
-        
+    public void edit_SO(String search, String client, String phone, String status, String oDate, String dDate){
+        ServiceOrder aux = stack_so;
+        boolean find = false;
+        if(stack_so == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getOrderNumber() == search) {
+                    System.out.println("Ingrese los nuevos datos a cambiar: ");
+                    System.out.println("Cliente: ");
+                    aux.setClient(client);
+                    System.out.println("Número de celular:");
+                    aux.setCellNumber(phone);
+                    System.out.println("Estado:");
+                    aux.setState(Integer.parseInt(status));
+                    System.out.println("Fecha de realización:");
+                    aux.setOrderDate(oDate);
+                    System.out.println("Fecha de envío:");
+                    aux.setDeliveryDate(dDate);
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
     public void delete_SO(){

@@ -23,12 +23,47 @@ public class Service_stack {
         }//else
     }
     
-    public void search_S(){
-        
+    public void search_S(String wanted){
+        Service aux = stack_s;
+        boolean find = false;
+        if(stack_s == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getId() == Integer.parseInt(wanted)) {
+                    System.out.println("Datos encontrados:\nDescripcion: " + aux.getDescription()+ "\nPrecio: " + aux.getPrice()+ "\nID:: " + aux.getId()
+                + "\nTipo: " + aux.getType());
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
-    public void edit_S(){
-        
+    public void edit_S(String search, String id, double price, int type, String description){
+        Service aux = stack_s;
+        boolean find = false;
+        if(stack_s == null) {
+            System.out.println("La pila esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getId() == Integer.parseInt(search)) {
+                    System.out.println("Datos encontrados:\nDescripcion: " + aux.getDescription()+ "\nPrecio: " + aux.getPrice()+ "\nID:: " + aux.getId()
+                + "\nTipo: " + aux.getType());
+                    System.out.println("Ingrese los nuevos cambios:");
+                    aux.setId(Integer.parseInt(id));
+                    aux.setPrice(price);
+                    aux.setType(type);
+                    aux.setDescription(description);
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
     public void pop_S(){

@@ -12,7 +12,7 @@ public class Refacts_queue {
     }
     
     
-    public void enqueue_C(int u, String p_n, double p, String p_c, boolean p_s){ //add function
+    public void enqueue_C(int u, String p_n, double p, String p_c, String p_s){ //add function
         Refacts newRefacts = new Refacts(u, p_n, p, p_c, p_s);
         
         if(queue_r == null){
@@ -26,12 +26,47 @@ public class Refacts_queue {
         } //else
     } //enqueue
     
-    public void search_C(){
-        
+    public void search_C(String wanted){
+        Refacts aux = queue_r;
+        boolean find = false;
+        if(queue_r == null) {
+            System.out.println("La cola esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getProductName() == wanted) {
+                    System.out.println("Los datos encontrados son: " + aux.getUnits() + aux.getProductName()+ aux.getPrice() + aux.getProductClass() + aux.isProuctStatus());
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if(!find){
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
-    public void edit_C(){
-        
+    public void edit_C(String search, String units, String pName, String price, String pClass, String pStatus){
+        Refacts aux = queue_r;
+        boolean find = false;
+        if(queue_r == null) {
+            System.out.println("La cola esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getProductName() == search) {
+                    System.out.println("Ingrese los nuevos datos:");
+                    aux.setProductName(pName);
+                    aux.setPrice(Double.parseDouble(price));
+                    aux.setUnits(Integer.parseInt(units));
+                    aux.setProductClass(pClass);
+                    aux.setProuctStatus(pStatus);
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if(!find){
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
     public void dequeue_C(){ //ddelete function
