@@ -493,14 +493,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIEditToolActionPerformed
 
     private void jMIAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddClientActionPerformed
-        Client_Register_Edit clientRegister = new Client_Register_Edit(queue_c);
+        Client_Register_Edit clientRegister = new Client_Register_Edit(queue_c, 0);
         jdpMenu.add(clientRegister);
         clientRegister.show();
-        this.isVisible();
     }//GEN-LAST:event_jMIAddClientActionPerformed
 
     private void jMIEditClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditClientActionPerformed
-        Client_Register_Edit clientEdit = new Client_Register_Edit(queue_c);
+        Client_Register_Edit clientEdit = new Client_Register_Edit(queue_c, 1);
         jdpMenu.add(clientEdit);
         clientEdit.show();
     }//GEN-LAST:event_jMIEditClientActionPerformed
