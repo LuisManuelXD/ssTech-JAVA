@@ -260,6 +260,11 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         
         clientQueue.enqueue_C(name, lastName, age, mail, cellPhone);
         JOptionPane.showMessageDialog(null, "Se agrego con exito", "Cliente agregado", HEIGHT, frameIcon);
+        txtName.setText(null);
+        txtLastName.setText(null);
+        comboxEdad.setSelectedIndex(0);
+        txtMail.setText(null);
+        txtCellPhone.setText(null);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -305,6 +310,11 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         
         clientQueue.updateClient(mail, newName, newLastName, newAge, newMail, newCellPhone);
         JOptionPane.showMessageDialog(null, "Se edito con exito", "Cliente editar", HEIGHT, frameIcon);
+        txtName.setText(null);
+        txtLastName.setText(null);
+        comboxEdad.setSelectedIndex(0);
+        txtMail.setText(null);
+        txtCellPhone.setText(null);
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
