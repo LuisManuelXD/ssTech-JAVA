@@ -4,17 +4,41 @@
  */
 package view;
 
+import controller.Tools_stack;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Tools;
+
 /**
  *
  * @author luisf
  */
 public class Tool_Search extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form jtfSearchTool
-     */
-    public Tool_Search() {
+    //Inicializamos el apuntador
+    Tools tools;
+    Tools_stack stack_t;
+    DefaultTableModel table = new DefaultTableModel();
+    
+    public Tool_Search(Tools_stack s_t) {
         initComponents();
+        stack_t = s_t;
+        
+        //Aqui se supone que tiene que imprimir en la tabla todos los valores
+        //stack_t.recorrerCola();
+        
+        String[] title = new String[]{"Nombre", "ID", "Precio", "tipo", "Cant"};
+        table.setColumnIdentifiers(title);
+        tableTools.setModel(table);
+        
+        Tools[] toolsGet = stack_t.getAllTools();
+        
+        for(Tools tools : toolsGet){
+            table.addRow(new Object[]{
+                tools.getName(), tools.getId(), tools.getPrice(), 
+                tools.getType(), tools.getAmount()
+            });
+        }
     }
 
     /**
@@ -31,8 +55,9 @@ public class Tool_Search extends javax.swing.JInternalFrame {
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableTool = new javax.swing.JTable();
+        tableTools = new javax.swing.JTable();
         jlbTitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
@@ -43,6 +68,8 @@ public class Tool_Search extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(0, 102, 102));
+
+        txtSearch.setToolTipText("Coloca el ID");
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
@@ -63,7 +90,7 @@ public class Tool_Search extends javax.swing.JInternalFrame {
             }
         });
 
-        jTableTool.setModel(new javax.swing.table.DefaultTableModel(
+        tableTools.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -74,12 +101,16 @@ public class Tool_Search extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTableTool.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane1.setViewportView(jTableTool);
+        tableTools.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane1.setViewportView(tableTools);
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jlbTitulo.setText("Buscar Herramienta");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ID:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,38 +118,41 @@ public class Tool_Search extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(164, 164, 164))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch)
+                        .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jlbTitulo)
-                        .addGap(95, 95, 95))))
+                        .addGap(89, 89, 89))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addGap(163, 163, 163))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(9, 9, 9)
                 .addComponent(jlbTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSearch)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 7, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,7 +170,27 @@ public class Tool_Search extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        //Al presionar tiene que buscar el dato que se ingresp y compararlo 
+        if (txtSearch.getText().length() == 0) { 
+            JOptionPane.showMessageDialog(null, "Campo ID vacio");
+            return;
+        }
+        
+        Tools tools = stack_t.getToolByID(Integer.parseInt(txtSearch.getText()));
+        
+        if(tools != null){
+            JOptionPane.showMessageDialog(null, "Herramienta encontrada:\nNombre:" + tools.getName() + 
+                    "\nID: " + tools.getId() + "\nPrecio: " + tools.getPrice() + 
+                    "\nTipo: " + tools.getType() + "\nCantidad: " + tools.getAmount());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontro ninguna herramienta con esa id", 
+                    "Herramienta busqueda", HEIGHT, frameIcon);
+        }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -148,10 +202,11 @@ public class Tool_Search extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableTool;
     private javax.swing.JLabel jlbTitulo;
+    private javax.swing.JTable tableTools;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,17 +4,26 @@
  */
 package view;
 
+import controller.Tools_stack;
+import javax.swing.JOptionPane;
+import model.Tools;
+
 /**
  *
  * @author luisf
  */
 public class Tool_Delete extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form jtfDeleteTool
-     */
-    public Tool_Delete() {
+    //Inicializamos el apuntador
+    Tools tools;
+    Tools_stack stack_t;
+    
+    public Tool_Delete(Tools_stack s_t) {
         initComponents();
+        stack_t = s_t;
+        
+        //Se debe de poner en el text field, el ide que se puede eliminar
+        txtID.setText(String.valueOf(stack_t.stack_t.getId()));
     }
 
     /**
@@ -124,7 +133,16 @@ public class Tool_Delete extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        //Se elimina el primer elemento de la pila
+        if (txtID.getText().length() == 0) { 
+            JOptionPane.showMessageDialog(null, "Campo ID vacio");
+            return;
+        }
+        
+        stack_t.pop_T();
+        JOptionPane.showMessageDialog(null, "Opcion eliminada");
+        stack_t.recorrerCola();
+        txtID.setText("");
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

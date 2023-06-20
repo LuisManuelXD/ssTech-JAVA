@@ -4,10 +4,12 @@
  */
 package controller;
 
+import javax.swing.JOptionPane;
+import model.Client;
 import model.Tools;
 
 public class Tools_stack {
-    Tools stack_t; //stack_tools
+    public Tools stack_t; //stack_tools
     
     public Tools_stack(){
         this.stack_t = null;
@@ -25,16 +27,17 @@ public class Tools_stack {
         } //else
     }//add_T
     
-    public void search_T(String wanted){
+    public void search_T(int wanted){
         Tools aux = stack_t;
         boolean find = false;
         if(stack_t == null) {
-            System.out.println("La pila esta vacia");
+            JOptionPane.showMessageDialog(null, "La pila esta vacia");
         } else {
             while ( aux != null && find != true){
-                if (aux.getId() == Integer.parseInt(wanted)) {
+                if (aux.getId() == wanted) {
                     System.out.println("\nNombre: " + aux.getName() + "\nId: " + aux.getId()+ "\nprecio: " + aux.getPrice()
                 + "\nTipo: " + aux.getType()+ "\nCantidad: " + aux.getAmount());
+                    find = true;
                 }
                 aux = aux.getNext();
             }
@@ -44,7 +47,7 @@ public class Tools_stack {
         }
     }
     
-    public void edit_T(String search, String name, String id, String price, int type, int amount){
+    public void edit_T(String search, String name, String price, int type, int amount){
         Tools aux = stack_t;
         boolean find = false;
         if(stack_t == null) {
@@ -52,12 +55,12 @@ public class Tools_stack {
         } else {
             while ( aux != null && find != true){
                 if (aux.getId() == Integer.parseInt(search)) {
-                    System.out.println("Ingrese los nuevos datos:");
+                    //System.out.println("Ingrese los nuevos datos:");
                     aux.setName(name);
-                    aux.setId(Integer.parseInt(id));
                     aux.setPrice(Double.parseDouble(price));
                     aux.setType(type);
                     aux.setAmount(amount);
+                    find = true;
                 }
                 aux = aux.getNext();
             }
@@ -92,5 +95,44 @@ public class Tools_stack {
                 aux = aux.getNext();
             }
         }
+    }
+    
+    public Tools getToolByID(int id) {
+        Tools aux = stack_t;
+        
+        while (aux != null) {
+            if (aux.getId()== id) {
+                return aux;
+            }
+            aux = aux.getNext();
+        }
+        
+        return null; // No se encontró ningún cliente con el correo electrónico dado
+    }
+    
+    public Tools[] getAllTools(){
+        Tools[] tools = new Tools[getSize()];
+        Tools aux = stack_t;
+        int index = 0;
+        
+        while(aux != null){
+            tools[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return tools;  
+    } 
+    
+    private int getSize() {
+        int count = 0;
+        Tools aux = stack_t;
+        
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        
+        return count;
     }
 }

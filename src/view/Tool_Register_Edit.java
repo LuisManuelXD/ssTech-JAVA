@@ -4,17 +4,24 @@
  */
 package view;
 
+import controller.Tools_stack;
+import javax.swing.JOptionPane;
+import model.Tools;
+
 /**
  *
  * @author luisf
  */
 public class Tool_Register_Edit extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form jtfRegisterTool
-     */
-    public Tool_Register_Edit() {
+    //Inicializamos el apuntador
+    Tools tools;
+    Tools_stack stack_t;
+    
+    public Tool_Register_Edit(Tools_stack s_t) {
         initComponents();
+        //Pasamos la lista del menu a el frame registrar edit
+        stack_t = s_t;
     }
 
     /**
@@ -26,18 +33,17 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rbGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        rbGrupo1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         txtID = new javax.swing.JTextField();
         jlbNombreHerramienta1 = new javax.swing.JLabel();
-        jbnEditar1 = new javax.swing.JButton();
+        jbnAdd = new javax.swing.JButton();
         rbtnConsumible = new javax.swing.JRadioButton();
         jlbTipo1 = new javax.swing.JLabel();
         jlbID1 = new javax.swing.JLabel();
         jlbCantidad1 = new javax.swing.JLabel();
         txtNameTool = new javax.swing.JTextField();
-        jbnEditar2 = new javax.swing.JButton();
+        jbnEditar = new javax.swing.JButton();
         jlbTitulo1 = new javax.swing.JLabel();
         rbtnUtilizable = new javax.swing.JRadioButton();
         barAmount = new javax.swing.JScrollBar();
@@ -45,6 +51,8 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         jlbNumero1 = new javax.swing.JLabel();
         txtCost = new javax.swing.JTextField();
         jlbID2 = new javax.swing.JLabel();
+        jlbCantNum = new javax.swing.JLabel();
+        btnFiller = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -61,17 +69,18 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         jlbNombreHerramienta1.setForeground(new java.awt.Color(255, 255, 255));
         jlbNombreHerramienta1.setText("Nombre de la Herramienta");
 
-        jbnEditar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnEditar1.setForeground(new java.awt.Color(0, 102, 102));
-        jbnEditar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        jbnEditar1.setToolTipText("Añadir");
-        jbnEditar1.addActionListener(new java.awt.event.ActionListener() {
+        jbnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnAdd.setForeground(new java.awt.Color(0, 102, 102));
+        jbnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jbnAdd.setToolTipText("Añadir");
+        jbnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnEditar1ActionPerformed(evt);
+                jbnAddActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(rbtnConsumible);
+        rbtnConsumible.setBackground(new java.awt.Color(0, 102, 102));
+        rbGrupo1.add(rbtnConsumible);
         rbtnConsumible.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnConsumible.setForeground(new java.awt.Color(204, 204, 204));
         rbtnConsumible.setText("Consumible");
@@ -96,13 +105,13 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         txtNameTool.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNameTool.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jbnEditar2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbnEditar2.setForeground(new java.awt.Color(0, 102, 102));
-        jbnEditar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jbnEditar2.setToolTipText("Editar");
-        jbnEditar2.addActionListener(new java.awt.event.ActionListener() {
+        jbnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbnEditar.setForeground(new java.awt.Color(0, 102, 102));
+        jbnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jbnEditar.setToolTipText("Editar");
+        jbnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnEditar2ActionPerformed(evt);
+                jbnEditarActionPerformed(evt);
             }
         });
 
@@ -110,13 +119,21 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         jlbTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jlbTitulo1.setText("Registrar / Editar Herramienta");
 
-        buttonGroup1.add(rbtnUtilizable);
+        rbtnUtilizable.setBackground(new java.awt.Color(0, 102, 102));
+        rbGrupo1.add(rbtnUtilizable);
         rbtnUtilizable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnUtilizable.setForeground(new java.awt.Color(204, 204, 204));
         rbtnUtilizable.setText("Utilizable");
 
+        barAmount.setMaximum(26);
         barAmount.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        barAmount.setVisibleAmount(1);
         barAmount.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        barAmount.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
+            public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
+                barAmountAdjustmentValueChanged(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
@@ -134,10 +151,26 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
 
         txtCost.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtCost.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txtCost.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCostKeyTyped(evt);
+            }
+        });
 
         jlbID2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbID2.setForeground(new java.awt.Color(255, 255, 255));
         jlbID2.setText("ID:");
+
+        jlbCantNum.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jlbCantNum.setForeground(new java.awt.Color(255, 255, 255));
+
+        btnFiller.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
+        btnFiller.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFiller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFillerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,9 +178,9 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
-                .addComponent(jbnEditar1)
+                .addComponent(jbnAdd)
                 .addGap(18, 18, 18)
-                .addComponent(jbnEditar2)
+                .addComponent(jbnEditar)
                 .addGap(12, 12, 12)
                 .addComponent(btnBack)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -158,35 +191,40 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlbCantidad1)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jlbTitulo1)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jlbTipo1)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(rbtnConsumible)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(rbtnUtilizable)))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGap(43, 43, 43))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(barAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jlbNumero1, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtNameTool)
+                                .addComponent(jlbTitulo1, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jlbCantidad1)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jlbCantNum, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jlbTipo1)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(rbtnConsumible)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(rbtnUtilizable)))
+                                    .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGap(43, 43, 43))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNameTool, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jlbID2)
-                                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(38, 38, 38)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnFiller)))
+                                    .addGap(24, 24, 24)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jlbID1))))
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(barAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jlbNumero1))
+                            .addGap(0, 0, Short.MAX_VALUE)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,30 +237,36 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
                 .addComponent(txtNameTool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbID1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlbID2)
+                            .addComponent(jlbID1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jlbNumero1))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFiller))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbID2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jlbTipo1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbtnConsumible)
-                            .addComponent(rbtnUtilizable))))
+                            .addComponent(rbtnUtilizable)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jlbNumero1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jlbCantidad1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jlbCantidad1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlbCantNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(barAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbnEditar1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbnEditar2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbnAdd, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbnEditar, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -245,27 +289,157 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnConsumibleActionPerformed
 
-    private void jbnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEditar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbnEditar1ActionPerformed
+    private void jbnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnAddActionPerformed
+        //Al presionar el boton registramos un nuevo nodo con la informacion
+        
+        //========== validaciones
+        if(txtNameTool.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Campo Nombre de Herramienta vacio");
+            return;
+        }
+        
+        if(txtID.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Campo de ID vacio");
+            return;
+        }
+        
+        if(txtCost.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Campo del Precio vacio");
+            return;
+        }
+        
+        if(rbtnConsumible.isSelected() == false && rbtnUtilizable.isSelected() == false){
+            JOptionPane.showMessageDialog(null, "Seleccione el tipo de Herramienta");
+            return;
+        }
+        
+        if(barAmount.getValue() == 0){
+            JOptionPane.showMessageDialog(null, "Ingresa un valor en la cantidad");
+            return;
+        }
+        //==========
+        
+        //obtenemos los datos 
+        String n = txtNameTool.getText(); //nombre
+        int id = Integer.parseInt(txtID.getText()); //id
+        double p = Double.parseDouble(txtCost.getText()); //precio
+        int t = 0;
+        if(rbtnConsumible.isSelected() == true){
+            //Consumible = 1
+             t = 1; //tipo
+        } else if(rbtnUtilizable.isSelected() == true){
+            //Utilizable = 2
+             t = 2; //tipo
+        }
+        int a = barAmount.getValue();
+        
+        //Los agregamos en la funcion
+        stack_t.push_T(n, id, p, t, a);
+        
+        //limpiamos los valores
+        txtNameTool.setText("");
+        txtID.setText("");
+        txtCost.setText("");
+        rbGrupo1.clearSelection();
+        barAmount.setValue(1);
+        
+        //FUNCION DE PRUEBA PARA VERIFICAR QUE SE HAYA AGREGADO
+        stack_t.recorrerCola();
+    }//GEN-LAST:event_jbnAddActionPerformed
 
-    private void jbnEditar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEditar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbnEditar2ActionPerformed
+    private void jbnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnEditarActionPerformed
+        //Cuando se presiona editar, ya deben de estar los cambios realizados, nomas se pueden 
+        
+        //Obtiene los nuevos valores
+        String n = txtNameTool.getText();
+        String p = txtCost.getText();
+        int a = barAmount.getValue();
+        int t = 0;
+        if(rbtnConsumible.isSelected() == true){
+            t = 1;
+        } else if(rbtnUtilizable.isSelected() == true){
+            t=2;
+        }
+        String search = txtID.getText();
+        
+        //funcion para editar
+        stack_t.edit_T(search, n, p, t, a);
+        
+        //limpiamos los valores
+        txtNameTool.setText("");
+        txtID.setText("");
+        txtCost.setText("");
+        rbGrupo1.clearSelection();
+        barAmount.setValue(1);
+        
+        stack_t.recorrerCola();
+        
+    }//GEN-LAST:event_jbnEditarActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void barAmountAdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_barAmountAdjustmentValueChanged
+        // TODO add your handling code here:
+        jlbCantNum.setText(String.valueOf(barAmount.getValue()));
+    }//GEN-LAST:event_barAmountAdjustmentValueChanged
+
+    private void btnFillerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFillerActionPerformed
+        //RELLENA TODOS LOS CAMPOS CUANDO SE PRESIONA
+        /*
+        //TOMAR EL VALOR DEL ID
+        int id2 = Integer.parseInt(txtID.getText());
+        //Comparar el valor ingresado con el guardado
+        Tools aux = stack_t.stack_t;
+        if(stack_t.stack_t == null){
+            JOptionPane.showMessageDialog(null, "La pila esta vacia");
+        } else {
+            while(aux != null){
+                if (stack_t.stack_t.getId() == id2) {
+                    //Rellenar los datos
+                    txtNameTool.setText(stack_t.stack_t.getName());
+                    txtCost.setText(String.valueOf(stack_t.stack_t.getPrice()));
+                    if (stack_t.stack_t.getType() == 1) {
+                        rbtnConsumible.setSelected(true);
+                    } else if (stack_t.stack_t.getType() == 2) {
+                        rbtnUtilizable.setSelected(true);
+                    }
+                    barAmount.setValue(stack_t.stack_t.getAmount());
+                    JOptionPane.showMessageDialog(null, "Solo se puede editar el campo del COSTO y CANTIDAD");
+                } else if (stack_t.stack_t.getId() != id2) {
+                    JOptionPane.showMessageDialog(null, "No se encontro tu id");
+                }
+                aux = aux.getNext();
+            }
+        }
+        
+        */
+        
+        
+        
+    }//GEN-LAST:event_btnFillerActionPerformed
+
+    private void txtCostKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        boolean punto = key == 46;
+        
+        if(!(numeros || punto)){ 
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCostKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollBar barAmount;
     private javax.swing.JButton btnBack;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton btnFiller;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbnEditar1;
-    private javax.swing.JButton jbnEditar2;
+    private javax.swing.JButton jbnAdd;
+    private javax.swing.JButton jbnEditar;
+    private javax.swing.JLabel jlbCantNum;
     private javax.swing.JLabel jlbCantidad1;
     private javax.swing.JLabel jlbID1;
     private javax.swing.JLabel jlbID2;
@@ -273,7 +447,7 @@ public class Tool_Register_Edit extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbNumero1;
     private javax.swing.JLabel jlbTipo1;
     private javax.swing.JLabel jlbTitulo1;
-    private javax.swing.ButtonGroup rbGroup1;
+    private javax.swing.ButtonGroup rbGrupo1;
     private javax.swing.JRadioButton rbtnConsumible;
     private javax.swing.JRadioButton rbtnUtilizable;
     private javax.swing.JTextField txtCost;
