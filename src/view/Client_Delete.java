@@ -106,7 +106,7 @@ public class Client_Delete extends javax.swing.JInternalFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         clientQueue.dequeue_C();
-        JOptionPane.showMessageDialog(null, "Se ha eliminado el último elemento agregado.", "Cliente eliminado", HEIGHT, frameIcon);
+        JOptionPane.showMessageDialog(null, "Se ha eliminado el primer elemento agregado.", "Cliente eliminado", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

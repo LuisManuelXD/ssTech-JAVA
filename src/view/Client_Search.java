@@ -148,7 +148,7 @@ public class Client_Search extends javax.swing.JInternalFrame {
             return;
         }
 
-        Client client = clientQueue.getClientByMail(txtSearch.getText());
+        Client client = clientQueue.getClient(txtSearch.getText());
         
         if (client != null) {
             JOptionPane.showMessageDialog(null, "Cliente encontrado:\nNombre: " + client.getName() + 
