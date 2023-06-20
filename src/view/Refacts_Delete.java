@@ -4,6 +4,10 @@
  */
 package view;
 
+import controller.Refacts_queue;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Beto
@@ -13,8 +17,16 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
     /**
      * Creates new form DeleteServiceOrder
      */
-    public Refacts_Delete() {
+    
+    Menu main;
+    Refacts_queue refact;
+    
+    public Refacts_Delete(Menu window, Refacts_queue re) {
         initComponents();
+        
+        main = window;
+        refact = re;
+        
     }
 
     /**
@@ -30,8 +42,6 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
         btnDelete = new javax.swing.JButton();
         jlbTitulo = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jlbID = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -67,34 +77,21 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jlbID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbID.setText("Nombre:");
-
-        txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jlbTitulo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
                         .addComponent(btnDelete)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBack)
-                        .addGap(119, 119, 119))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbID)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jlbTitulo)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btnBack)))
+                .addGap(0, 76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,14 +99,10 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jlbTitulo)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
                     .addComponent(btnDelete))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,7 +120,8 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+      refact.delete_RE();
+        JOptionPane.showMessageDialog(null, "Se ha eliminado el último elemento agregado.", "Refacción eliminada", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -140,8 +134,6 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jlbID;
     private javax.swing.JLabel jlbTitulo;
-    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

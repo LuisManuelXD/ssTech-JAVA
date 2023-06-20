@@ -4,17 +4,41 @@
  */
 package view;
 
+import controller.Refacts_queue;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
+import model.Refacts;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author Beto
  */
 public class Refacts_Search extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form SearchServiceOrder
-     */
-    public Refacts_Search() {
+    Refacts_queue refact_queue = new Refacts_queue();
+    DefaultTableModel table = new DefaultTableModel();  
+    
+     
+    public Refacts_Search(Refacts_queue refact) {
         initComponents();
+        refact_queue = refact;
+        
+        String[] title = new String[]{"Unidades", "Producto", "Precio", "Categoría", "Estado"};
+        table.setColumnIdentifiers(title);
+        jTableRefacts.setModel(table);
+        
+        Refacts[] refactGet = refact_queue.getAllRefacts();
+        
+        for(Refacts r : refactGet) {
+            table.addRow(new Object[]{
+                r.getUnits(), r.getProductName(), r.getPrice(), r.getProductClass(), r.getProuctStatus()
+            });
+        }
+        
+        
+        
     }
 
     /**
@@ -44,13 +68,13 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
 
         jTableRefacts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Unidades", "Producto", "Precio", "Categoría ", "Estado"
             }
         ));
         jTableRefacts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,7 +158,21 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+      if (txtSearch.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo Precio vacio");
+            return;
+        }
+
+        Refacts re = refact_queue.getRefactByPrice(txtSearch.getText());
+        
+        if (re != null) {
+            JOptionPane.showMessageDialog(null, "Refacción encontrada:"  + 
+                "\nUnidades: " + re.getUnits()+ "\nProducto: " + re.getProductName() + "\nPrecio: " + 
+                re.getPrice()+ "\nCategoría: " + re.getProductClass() + "\nEstado: " + re.getProuctStatus());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró ninguna refacción con el precio proporcionado.", "Refacción busqueda", HEIGHT, frameIcon);
+        }
+
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

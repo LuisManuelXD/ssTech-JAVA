@@ -4,6 +4,10 @@
  */
 package view;
 
+import controller.Refacts_queue;
+import javax.swing.JOptionPane;
+import model.Refacts;
+
 /**
  *
  * @author Beto
@@ -13,8 +17,13 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
-    public Refacts_Register_Edit() {
+        Menu main;
+     Refacts_queue refacts;
+     Refacts re ;
+    public Refacts_Register_Edit(Menu window, Refacts_queue refact) {
         initComponents();
+         main = window;
+        refacts = refact;
     }
 
     /**
@@ -44,6 +53,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -52,6 +62,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
+        rbtnMiddle.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(rbtnMiddle);
         rbtnMiddle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnMiddle.setForeground(new java.awt.Color(204, 204, 204));
@@ -66,7 +77,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         lblPedido.setForeground(new java.awt.Color(255, 255, 255));
         lblPedido.setText("Unidades");
 
-        comboxUnits.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        comboxUnits.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         comboxUnits.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
@@ -79,19 +90,21 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         lblCelular.setForeground(new java.awt.Color(255, 255, 255));
         lblCelular.setText("Precio");
 
-        comboxProduct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Memoria RAM", "SSD", "HDD" }));
+        comboxProduct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Memoria RAM", "SSD", "HDD" }));
         comboxProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado.setText("Categoría");
 
+        rbtnBad.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(rbtnBad);
         rbtnBad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnBad.setForeground(new java.awt.Color(204, 204, 204));
         rbtnBad.setText("Malo");
         rbtnBad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        rbtnGood.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(rbtnGood);
         rbtnGood.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnGood.setForeground(new java.awt.Color(204, 204, 204));
@@ -106,7 +119,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Registrar / Editar Refacciones");
 
-        comboxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Herramientas" }));
+        comboxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Componentes", "Herramientas" }));
         comboxCategory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -142,6 +155,14 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
             }
         });
 
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -158,11 +179,14 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboxProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboxUnits, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(75, 75, 75))
+                            .addComponent(comboxUnits, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnSearch)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addComponent(rbtnGood)
@@ -199,9 +223,11 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
                     .addComponent(lblCliente)
                     .addComponent(comboxProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCelular)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblCelular)
+                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSearch))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEstado)
@@ -240,11 +266,72 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtPriceActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        
+        int units =  comboxUnits.getSelectedIndex();
+        String product = comboxProduct.getSelectedItem().toString();
+        double price = Double.parseDouble(txtPrice.getText());   
+        String category = comboxCategory.getSelectedItem().toString();
+      
+      
+        
+        String status = "";
+        
+        if (rbtnGood.isSelected()) {
+            status = "Bueno";
+        }
+        if (rbtnMiddle.isSelected()) {
+            status = "Medio";
+        }
+        if (rbtnBad.isSelected()) {
+            status = "Malo";
+        }
+        
+        refacts.enqueue_C(units, product, price, category, status);
+        
+        comboxUnits.setSelectedIndex(0);
+        comboxProduct.setSelectedIndex(0);
+        txtPrice.setText("");
+        comboxCategory.setSelectedIndex(0);
+        rbtnGood.setSelected(false);
+        rbtnMiddle.setSelected(false);
+        rbtnBad.setSelected(false);
+        
+        JOptionPane.showMessageDialog(null, "Registrado correctamente");
+        refacts.recorrerCola();
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        int units =  comboxUnits.getSelectedIndex();
+        String product = comboxProduct.getSelectedItem().toString();
+        double price = Double.parseDouble(txtPrice.getText());   
+        String category = comboxCategory.getSelectedItem().toString();
+         
+       String status = "";
+        
+        if (rbtnGood.isSelected()) {
+            status = "Bueno";
+        }
+        if (rbtnMiddle.isSelected()) {
+            status = "Medio";
+        }
+        if (rbtnBad.isSelected()) {
+            status = "Malo";
+        }
+        
+        refacts.updateRefact(name,product, units, price, category, status);
+        
+        
+        comboxUnits.setSelectedIndex(re.getUnits());
+        comboxProduct.setSelectedItem(re.getProductName());
+        txtPrice.setText("");
+        comboxCategory.setSelectedItem(re.getProductClass());
+        rbtnGood.setSelected(false);
+        rbtnMiddle.setSelected(false);
+        rbtnBad.setSelected(false);
+        
+        comboxUnits.requestFocus();
+        
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -252,11 +339,16 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSearch;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> comboxCategory;
     private javax.swing.JComboBox<String> comboxProduct;
