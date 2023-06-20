@@ -42,6 +42,19 @@ public class Service_stack {
         }
     }
     
+    public Service getServiceById(String id) {
+        Service aux = stack_s;
+        int identifier = Integer.parseInt(id);
+        while (aux != null) {
+            if (aux.getId() == identifier) {
+                return aux;
+            }
+            aux = aux.getNext();
+        }
+        
+        return null; // No se encontró ningún cliente con el correo electrónico dado
+    }
+    
     public void edit_S(String search, double price, int type, String description){
         Service aux = stack_s;
         boolean find = false;

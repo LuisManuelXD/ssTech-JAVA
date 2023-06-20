@@ -2,6 +2,7 @@ package view;
 
 import controller.ServiceOrder_stack;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ServiceOrder;
 
@@ -61,6 +62,12 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSearchKeyTyped(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
@@ -157,6 +164,11 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         String wanted = txtSearch.getText();
         soStack.search_SO(wanted);
         
+        ServiceOrder seror = soStack.getOrderByNumber(wanted);
+        
+        JOptionPane.showMessageDialog(null, "Datos encontrados:\n# de Orden: " + seror.getOrderNumber() + "\nEstado: " + seror.getState() + 
+        "\nFecha de Solicitud: " + seror.getOrderDate() + "\nFecha de Entrega: " + seror.getDeliveryDate(), "COINCIDENCIA ENCONTRADA", HEIGHT, frameIcon);
+        
         txtSearch.setText("");
         txtSearch.requestFocus();
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -165,6 +177,15 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtSearchKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

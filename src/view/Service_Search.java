@@ -5,6 +5,8 @@
 package view;
 
 import controller.Service_stack;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Service;
 
@@ -19,6 +21,7 @@ public class Service_Search extends javax.swing.JInternalFrame {
      */
     Menu main;
     Service_stack sstack;
+    Service s;
     DefaultTableModel table = new DefaultTableModel();
     
     public Service_Search(Menu window, Service_stack sstk) {
@@ -82,6 +85,12 @@ public class Service_Search extends javax.swing.JInternalFrame {
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jlbTitulo.setText("Buscar Servicio");
 
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSearchKeyTyped(evt);
+            }
+        });
+
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
@@ -138,7 +147,7 @@ public class Service_Search extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,6 +169,11 @@ public class Service_Search extends javax.swing.JInternalFrame {
         String found = String.valueOf(wanted);
         sstack.search_S(found);
         
+        Service service = sstack.getServiceById(found);
+        
+        JOptionPane.showMessageDialog(null, "Datos encontrados:\nID: " + service.getId() + "\nTipo: " + service.getType() + "\nPrecio: " + service.getPrice()
+                + "\nDescripción: " + service.getDescription(), "COINCIDENCIA ENCONTRADA", HEIGHT, frameIcon);
+        
         txtSearch.setText("");
         txtSearch.requestFocus();
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -168,6 +182,15 @@ public class Service_Search extends javax.swing.JInternalFrame {
         //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && (txtSearch.getText().length() < 6 && txtSearch.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números y no mayor a 5 dígitos.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtSearchKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
