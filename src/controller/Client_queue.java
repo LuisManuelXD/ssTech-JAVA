@@ -44,34 +44,21 @@ public class Client_queue {
         }
     }
     
-    public void edit_C(String search, String name, String lName, String age,  String mail, String phone ){
+    public void updateClient(String mail, String newName, String newLastName, int newAge, String newMail, String newCellPhone) {
         Client aux = queue_c;
-        boolean find = false;
-        if(queue_c == null) {
-            System.out.println("La cola esta vacia");
-        } else {
-            while ( aux != null && find != true){
-                if (aux.getMail() == search) {
-                    System.out.println("Los datos del cliente son: " + aux.getName() + aux.getLastName() + aux.getAge() + aux.getMail() + aux.getCellPhone());
-                    System.out.println("Ingrese los nuevos datos: ");
-                    System.out.println("Nombre:");
-                    aux.setName(name);
-                    System.out.println("Apellidos:");
-                    aux.setLastName(lName);
-                    System.out.println("Edad:");
-                    aux.setAge(Integer.parseInt(age));
-                    System.out.println("Correo:");
-                    aux.setMail(mail);
-                    System.out.println("Celular:");
-                    aux.setCellPhone(phone);
-                    find = true;
-                }
-                aux = aux.getNext();
+        
+        while (aux != null) {
+            if (aux.getMail().equals(mail)) {
+                aux.setName(newName);
+                aux.setLastName(newLastName);
+                aux.setAge(newAge);
+                aux.setMail(newMail);
+                aux.setCellPhone(newCellPhone);
+                return;
             }
-            if (!find) {
-                System.out.println("No se encontraron coincidencias.");
-            }
+            aux = aux.getNext();
         }
+        System.out.println("No se encontró ningún cliente con el correo electrónico proporcionado.");
     }
     
     public void dequeue_C(){ //ddelete function
@@ -102,7 +89,7 @@ public class Client_queue {
         }
     }
     
-    public Client getClientByMail(String mail) {
+    public Client getClient(String mail) {
         Client aux = queue_c;
         
         while (aux != null) {

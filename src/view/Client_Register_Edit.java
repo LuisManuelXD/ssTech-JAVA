@@ -1,21 +1,31 @@
 package view;
 
 import controller.Client_queue;
+import static java.awt.image.ImageObserver.HEIGHT;
 import javax.swing.JOptionPane;
+import model.Client;
 
 public class Client_Register_Edit extends javax.swing.JInternalFrame {
     Client_queue clientQueue = new Client_queue();
+    String mail;
     
     /**
      * Creates new form Client_Register_Edit
      */
-    public Client_Register_Edit(Client_queue clients) {
+    public Client_Register_Edit(Client_queue clients, int visible) {
         initComponents();
         comboxEdad.addItem("Selecciona");
         for (int i = 0; i <= 100; i++) {
             comboxEdad.addItem(String.valueOf(i));
         }
         clientQueue = clients;
+        
+        if(visible == 0) {
+            btnSearch.setVisible(false);
+            btnEdit.setVisible(false);
+        } else {
+            btnAdd.setVisible(false);
+        }
     }
 
     /**
@@ -42,6 +52,7 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         btnBack = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         lblLastName = new javax.swing.JLabel();
+        btnSearch = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -113,6 +124,14 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         lblLastName.setForeground(new java.awt.Color(255, 255, 255));
         lblLastName.setText("Apellidos:");
 
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,13 +152,16 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
                         .addComponent(btnEdit)
                         .addGap(18, 18, 18)
                         .addComponent(btnBack))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtName)
-                        .addComponent(txtLastName)
-                        .addComponent(txtMail)
-                        .addComponent(txtCellPhone)
-                        .addComponent(comboxEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txtLastName)
+                            .addComponent(txtMail)
+                            .addComponent(txtCellPhone)
+                            .addComponent(comboxEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch)))
+                .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlbTitulo)
@@ -163,10 +185,12 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
                     .addComponent(lblAge)
                     .addComponent(comboxEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMail)
-                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblMail)
+                        .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCellPhone)
                     .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -235,11 +259,52 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         String cellPhone = txtCellPhone.getText();
         
         clientQueue.enqueue_C(name, lastName, age, mail, cellPhone);
-        clientQueue.recorrerCola();
+        JOptionPane.showMessageDialog(null, "Se agrego con exito", "Cliente agregado", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        if (txtName.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo nombres vacio");
+            return;
+        }
+
+        if (txtLastName.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo apellidos vacio");
+            return;
+        }
+
+        if (comboxEdad.getSelectedItem().equals("Selecciona")) {
+            JOptionPane.showMessageDialog(null, "Campo edad sin seleccionar");
+            return;
+        }
+
+        if (txtMail.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        if (txtMail.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        if (txtCellPhone.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo celular vacio");
+            return;
+        }
+
+        if (txtCellPhone.getText().length() < 10) {
+            JOptionPane.showMessageDialog(null, "Numero celular incompleto");
+            return;
+        }
+        String newName = txtName.getText();
+        String newLastName = txtLastName.getText();
+        int newAge = Integer.parseInt((String) comboxEdad.getSelectedItem());
+        String newMail = txtMail.getText();
+        String newCellPhone = txtCellPhone.getText();
+        
+        clientQueue.updateClient(mail, newName, newLastName, newAge, newMail, newCellPhone);
+        JOptionPane.showMessageDialog(null, "Se edito con exito", "Cliente editar", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -259,11 +324,32 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtCellPhoneKeyTyped
 
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        if (txtMail.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        Client client = clientQueue.getClient(txtMail.getText());
+        mail = txtMail.getText();
+        
+        if (client != null) {
+            txtName.setText(client.getName());
+            txtLastName.setText(client.getLastName());
+            comboxEdad.setSelectedIndex(client.getAge()+1);
+            txtMail.setText(client.getMail());
+            txtCellPhone.setText(client.getCellPhone());      
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró ningún cliente con el correo electrónico proporcionado.", "Cliente busqueda", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_btnSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> comboxEdad;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbTitulo;
