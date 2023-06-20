@@ -25,12 +25,53 @@ public class Client_queue {
         } //else
     } //enqueue
     
-    public void search_C(){
-        
+    public void search_C(String wanted){
+        Client aux = queue_c;
+        boolean find = false;
+        if(queue_c == null) {
+            System.out.println("La cola esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getMail() == wanted) {
+                    System.out.println("Los datos del cliente son: " + aux.getName() + aux.getLastName() + aux.getAge() + aux.getMail() + aux.getCellPhone());
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
-    public void edit_C(){
-        
+    public void edit_C(String search, String name, String lName, String age,  String mail, String phone ){
+        Client aux = queue_c;
+        boolean find = false;
+        if(queue_c == null) {
+            System.out.println("La cola esta vacia");
+        } else {
+            while ( aux != null && find != true){
+                if (aux.getMail() == search) {
+                    System.out.println("Los datos del cliente son: " + aux.getName() + aux.getLastName() + aux.getAge() + aux.getMail() + aux.getCellPhone());
+                    System.out.println("Ingrese los nuevos datos: ");
+                    System.out.println("Nombre:");
+                    aux.setName(name);
+                    System.out.println("Apellidos:");
+                    aux.setLastName(lName);
+                    System.out.println("Edad:");
+                    aux.setAge(Integer.parseInt(age));
+                    System.out.println("Correo:");
+                    aux.setMail(mail);
+                    System.out.println("Celular:");
+                    aux.setCellPhone(phone);
+                    find = true;
+                }
+                aux = aux.getNext();
+            }
+            if (!find) {
+                System.out.println("No se encontraron coincidencias.");
+            }
+        }
     }
     
     public void dequeue_C(){ //ddelete function
@@ -60,5 +101,4 @@ public class Client_queue {
             }
         }
     }
-    
 }
