@@ -5,6 +5,8 @@
 package view;
 
 import controller.Service_stack;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -66,6 +68,12 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         jlbPrecioServicio.setForeground(new java.awt.Color(255, 255, 255));
         jlbPrecioServicio.setText("Precio del servicio");
 
+        txtPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPriceKeyTyped(evt);
+            }
+        });
+
         jlbTipoServicio.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jlbTipoServicio.setForeground(new java.awt.Color(255, 255, 255));
         jlbTipoServicio.setText("Tipo de servicio");
@@ -91,9 +99,26 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
             }
         });
 
+        jScrollPane1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jScrollPane1KeyTyped(evt);
+            }
+        });
+
         jtaDescription.setColumns(20);
         jtaDescription.setRows(5);
+        jtaDescription.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtaDescriptionKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtaDescription);
+
+        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDKeyTyped(evt);
+            }
+        });
 
         rbtnMantPreventivo.setBackground(new java.awt.Color(0, 102, 102));
         rbGroup1.add(rbtnMantPreventivo);
@@ -229,6 +254,16 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_rbtnMantCorrectivoActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if (jtaDescription.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
+        if (txtID.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
         String description = jtaDescription.getText();
         int id = Integer.parseInt(txtID.getText());
         double price = Double.parseDouble(txtPrice.getText());
@@ -267,6 +302,8 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         
         servicestk.edit_S(identifier, price, type, description);
         
+        JOptionPane.showMessageDialog(null, "Datos cambiados con éxito", "EDICIÓN COMPLETADA", HEIGHT, frameIcon);
+        
         jtaDescription.setText("");
         txtID.setText("");
         txtPrice.setText("");
@@ -279,6 +316,37 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && (txtID.getText().length() < 6 && txtID.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números y no mayor a 5 dígitos.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtIDKeyTyped
+
+    private void txtPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPriceKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && n != '.') {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números y un punto para indicar decimales.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtPriceKeyTyped
+
+    private void jScrollPane1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jScrollPane1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane1KeyTyped
+
+    private void jtaDescriptionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtaDescriptionKeyTyped
+        char l = evt.getKeyChar();
+        
+        if (!Character.isAlphabetic(l) && l != ' ' && (jtaDescription.getText().length() <= 30 && jtaDescription.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo letras, máximo 30.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_jtaDescriptionKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
