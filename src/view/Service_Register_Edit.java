@@ -79,6 +79,7 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         jlbID.setForeground(new java.awt.Color(255, 255, 255));
         jlbID.setText("ID:");
 
+        rbtnMantCorrectivo.setBackground(new java.awt.Color(0, 102, 102));
         rbGroup1.add(rbtnMantCorrectivo);
         rbtnMantCorrectivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbtnMantCorrectivo.setForeground(new java.awt.Color(204, 204, 204));
@@ -94,6 +95,7 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
         jtaDescription.setRows(5);
         jScrollPane1.setViewportView(jtaDescription);
 
+        rbtnMantPreventivo.setBackground(new java.awt.Color(0, 102, 102));
         rbGroup1.add(rbtnMantPreventivo);
         rbtnMantPreventivo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         rbtnMantPreventivo.setForeground(new java.awt.Color(204, 204, 204));
@@ -202,9 +204,8 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
                     .addComponent(rbtnMantCorrectivo))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnAdd)
-                        .addComponent(btnBack))
+                    .addComponent(btnAdd)
+                    .addComponent(btnBack)
                     .addComponent(btnEdit))
                 .addContainerGap(20, Short.MAX_VALUE))
         );

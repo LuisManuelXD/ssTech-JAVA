@@ -24,11 +24,11 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         main = window;
         soStack = sotk;
         
-        String[] title = new String[]{"# Orden", "Estado", "Fecha Ini.", "Fecha Ent."};
-        table.setColumnIdentifiers(title);
+        String[] tittle = new String[]{"# Orden", "Estado", "Fecha Ini.", "Fecha Ent."};
+        table.setColumnIdentifiers(tittle);
         tableServiceOrder.setModel(table);
         
-        ServiceOrder[] serviceOrders = sotk.getAllServiceOrder();
+        ServiceOrder[] serviceOrders = sotk.getAllServicesOrders();
         
         for(ServiceOrder serviceOrder : serviceOrders) {
             table.addRow(new Object[]{
@@ -136,7 +136,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
