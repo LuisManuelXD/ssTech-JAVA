@@ -10,25 +10,13 @@ public class Refacts_queue {
     public Refacts_queue() {
         this.queue_r = null;
     }
-<<<<<<< HEAD
     
-
     //add function
-    
-    
-    public void enqueue_C(int u, String p_n, double p, String p_c, String p_s){ //add function
-        Refacts newRefacts = new Refacts(u, p_n, p, p_c, p_s);
-        
-        if(queue_r == null){
-            queue_r= newRefacts;
-=======
-
     public void enqueue_C(int id, int units, String productName, double price, String category, String prouctStatus) {
         Refacts newRefacts = new Refacts(id, units, productName, price, category, prouctStatus);
 
         if (queue_r == null) {
             queue_r = newRefacts;
->>>>>>> origin/manuelBranch
         } else {
             Refacts aux = queue_r;
             while (aux.getNext() != null) {
