@@ -41,6 +41,18 @@ public class ServiceOrder_stack {
         }
     }
     
+    public ServiceOrder getOrderByNumber(String order) {
+        ServiceOrder aux = stack_so;
+        
+        while (aux != null) {
+            if (aux.getOrderNumber().equals(order)) {
+                return aux;
+            }
+            aux = aux.getNext();
+        }
+        return null;
+    }
+    
     public void edit_SO(String search, String client, String phone, int status, String oDate, String dDate){
         ServiceOrder aux = stack_so;
         boolean find = false;

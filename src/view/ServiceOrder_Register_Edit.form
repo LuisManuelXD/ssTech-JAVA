@@ -206,6 +206,7 @@
         <Component class="javax.swing.JTextField" name="txtCliente">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClienteActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtClienteKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblFechaSalida1">
@@ -220,6 +221,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNCelular">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNCelularKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPedido1">
           <Properties>
@@ -233,8 +237,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNPedido">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNPedidoKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFSalida">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFSalidaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtnEspera">
           <Properties>
@@ -282,6 +292,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFEntrega">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFEntregaKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCliente1">
           <Properties>
