@@ -5,6 +5,8 @@
 package view;
 
 import controller.Service_stack;
+import javax.swing.table.DefaultTableModel;
+import model.Service;
 
 /**
  *
@@ -17,11 +19,24 @@ public class Service_Search extends javax.swing.JInternalFrame {
      */
     Menu main;
     Service_stack sstack;
+    DefaultTableModel table = new DefaultTableModel();
     
     public Service_Search(Menu window, Service_stack sstk) {
         initComponents();
         main = window;
         sstack = sstk;
+        
+        String[] tittle = new String[]{"ID", "Tipo", "Precio", "Descripción"};
+        table.setColumnIdentifiers(tittle);
+        jTableService.setModel(table);
+        
+        Service[] services = sstack.getAllServices();
+        
+        for(Service service : services) {
+            table.addRow(new Object[]{
+                service.getId(),  service.getType(),  service.getPrice(),  service.getDescription()
+            });
+        }
     }
 
     /**

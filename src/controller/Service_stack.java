@@ -90,4 +90,28 @@ public class Service_stack {
             }
         }
     }
+    
+    public Service[] getAllServices() {
+        Service[] service = new Service[getSize()];
+        Service aux = stack_s;
+        int index = 0;
+        
+        while (aux != null) {
+            service[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return service;
+    }
+    
+    private int getSize() {
+        int count = 0;
+        Service aux = stack_s;
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        return count;
+    }
 }
