@@ -13,7 +13,6 @@ public class Service_stack {
     
     public void push_S(String d, double p, int id, int t){
         Service newService = new Service(d, p, id, t);
-        
         if(stack_s == null){
             stack_s = newService;
         } else {

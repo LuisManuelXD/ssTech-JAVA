@@ -6,6 +6,8 @@ package view;
 
 import controller.ServiceOrder_stack;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
+import model.ServiceOrder;
 
 /**
  *
@@ -17,12 +19,33 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
      * Creates new form ServiceOrder_Show
      */
     Menu main;
+    ServiceOrder so;
     ServiceOrder_stack soStack;
     
     public ServiceOrder_Search(Menu window, ServiceOrder_stack sotk) {
         initComponents();
         main = window;
         soStack = sotk;
+        
+        /*ServiceOrder array[] = new ServiceOrder[25];
+        
+        //array = soStack.recorrerCola();
+        
+        DefaultTableModel model = new DefaultTableModel();
+        
+        String[] header = {"# Orden", "Estado", "Fecha Ini.", "Fecha Ent."};
+        
+        Object[] data = new Object[4];
+        
+        for (int i = 0; i < 25; i++) {
+            data[0] = array[i].getOrderNumber();
+            data[1] = array[i].getState();
+            data[2] = array[i].getOrderDate();
+            data[3] = array[i].getDeliveryDate();
+            model.addRow(data);
+        }
+        
+        jTableServiceOrder.setModel(model);*/
     }
 
     /**
@@ -71,13 +94,13 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
 
         jTableServiceOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jTableServiceOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -143,7 +166,6 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String wanted = txtSearch.getText();
-        
         soStack.search_SO(wanted);
         
         txtSearch.setText("");

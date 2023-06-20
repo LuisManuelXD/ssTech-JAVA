@@ -1,17 +1,15 @@
-
 package controller;
 
 import model.Service;
 import model.ServiceOrder;
 
 public class ServiceOrder_stack {
-    ServiceOrder stack_so; //stack_serviceOrder
+    public ServiceOrder stack_so; //stack_serviceOrder
     
     public ServiceOrder_stack(){
         this.stack_so = null;
     }
     
-    //(order_number, client
     public void add_SO(String o_n, String c, String c_n, int s, String o_d, String d_d, String d, double p, int id, int t){
         ServiceOrder newServiceOrder = new ServiceOrder(o_n, c, c_n, s, o_d, d_d, d, p, id, t);
         
@@ -30,10 +28,9 @@ public class ServiceOrder_stack {
         if(stack_so == null) {
             System.out.println("La pila esta vacia");
         } else {
-            while ( aux != null && find != true){
-                if (aux.getOrderNumber() == wanted) {
-                    System.out.println("Datos de la orden de servicio:\nNumero de orden: " + aux.getOrderNumber()+ "\nCliente: " + aux.getClient()+ "\nNumero Celular: " + aux.getCellNumber()
-                + "\nEstado: " + aux.getState() + "\nFecha de la orden: " + aux.getOrderDate() + "\nFecha de entrega: " + aux.getDeliveryDate());
+            while (aux != null && find != true){
+                if (aux.getOrderNumber().equals(wanted)) {
+                    System.out.println("Datos de la orden de servicio: "+ aux.getOrderNumber() +"\n"+ aux.getClient() +"\n"+ aux.getCellNumber() +"\n"+ aux.getState() +"\n"+ aux.getOrderDate()  +"\n"+ aux.getDeliveryDate());
                     find = true;
                 }
                 aux = aux.getNext();
@@ -51,17 +48,11 @@ public class ServiceOrder_stack {
             System.out.println("La pila esta vacia");
         } else {
             while ( aux != null && find != true){
-                if (aux.getOrderNumber() == search) {
-                    System.out.println("Ingrese los nuevos datos a cambiar: ");
-                    System.out.println("Cliente: ");
+                if (aux.getOrderNumber().equals(search)) {
                     aux.setClient(client);
-                    System.out.println("Número de celular:");
                     aux.setCellNumber(phone);
-                    System.out.println("Estado:");
                     aux.setState(status);
-                    System.out.println("Fecha de realización:");
                     aux.setOrderDate(oDate);
-                    System.out.println("Fecha de envío:");
                     aux.setDeliveryDate(dDate);
                     find = true;
                 }

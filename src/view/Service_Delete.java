@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.Service_stack;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luisf
@@ -13,8 +16,12 @@ public class Service_Delete extends javax.swing.JInternalFrame {
     /**
      * Creates new form jtfDeleteService
      */
-    public Service_Delete() {
+    Menu main;
+    Service_stack sstack;
+    public Service_Delete(Menu window, Service_stack sstk) {
         initComponents();
+        main = window;
+        sstack = sstk;
     }
 
     /**
@@ -30,8 +37,6 @@ public class Service_Delete extends javax.swing.JInternalFrame {
         btnDelete = new javax.swing.JButton();
         jlbTitulo = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jlbID = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -67,48 +72,30 @@ public class Service_Delete extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jlbID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbID.setText("ID:");
-
-        txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbID)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnDelete)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBack)
-                        .addGap(122, 122, 122))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbTitulo)
-                        .addGap(94, 94, 94))))
+                        .addGap(59, 59, 59)
+                        .addComponent(btnBack))
+                    .addComponent(jlbTitulo))
+                .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jlbTitulo)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack)
-                    .addComponent(btnDelete))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(btnDelete)
+                    .addComponent(btnBack))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +113,8 @@ public class Service_Delete extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        sstack.pop_S();
+        JOptionPane.showMessageDialog(null, "Servicio reciente eliminado.", "Eliminación de servicio", HEIGHT);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -139,8 +127,6 @@ public class Service_Delete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jlbID;
     private javax.swing.JLabel jlbTitulo;
-    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }
