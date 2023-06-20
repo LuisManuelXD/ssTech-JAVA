@@ -58,6 +58,7 @@ public class Login extends javax.swing.JFrame {
         btnOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log out.png"))); // NOI18N
         btnOut.setText("Salir");
         btnOut.setToolTipText("Salir");
+        btnOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOutActionPerformed(evt);
@@ -68,6 +69,7 @@ public class Login extends javax.swing.JFrame {
         btnEnter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/log in.png"))); // NOI18N
         btnEnter.setText("Ingresar");
         btnEnter.setToolTipText("Ingresar");
+        btnEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnterActionPerformed(evt);

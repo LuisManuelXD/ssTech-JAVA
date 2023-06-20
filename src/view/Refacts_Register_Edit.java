@@ -56,6 +56,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         rbtnMiddle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnMiddle.setForeground(new java.awt.Color(204, 204, 204));
         rbtnMiddle.setText("Medio");
+        rbtnMiddle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblCliente.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCliente.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,6 +67,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         lblPedido.setText("Unidades");
 
         comboxUnits.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        comboxUnits.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +80,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         lblCelular.setText("Precio");
 
         comboxProduct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Memoria RAM", "SSD", "HDD" }));
+        comboxProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,11 +90,13 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         rbtnBad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnBad.setForeground(new java.awt.Color(204, 204, 204));
         rbtnBad.setText("Malo");
+        rbtnBad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         buttonGroup1.add(rbtnGood);
         rbtnGood.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbtnGood.setForeground(new java.awt.Color(204, 204, 204));
         rbtnGood.setText("Bueno");
+        rbtnGood.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblFechaSalida.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblFechaSalida.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,21 +107,40 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         jLabel1.setText("Registrar / Editar Refacciones");
 
         comboxCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Componentes", "Herramientas" }));
+        comboxCategory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(0, 102, 102));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         btnAdd.setToolTipText("Añadir");
+        btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnEdit.setForeground(new java.awt.Color(0, 102, 102));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnEdit.setToolTipText("Editar");
+        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.png"))); // NOI18N
         btnBack.setToolTipText("Regresar");
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,6 +238,19 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        //Si se presiona, cerrara la ventana
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
