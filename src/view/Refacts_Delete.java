@@ -1,30 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.Refacts_queue;
 import static java.awt.image.ImageObserver.HEIGHT;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Beto
- */
 public class Refacts_Delete extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form DeleteServiceOrder
      */
     
-    Menu main;
     Refacts_queue refact;
     
-    public Refacts_Delete(Menu window, Refacts_queue re) {
+    public Refacts_Delete(Refacts_queue re) {
         initComponents();
         
-        main = window;
         refact = re;
         
     }
@@ -120,8 +110,8 @@ public class Refacts_Delete extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-      refact.delete_RE();
-        JOptionPane.showMessageDialog(null, "Se ha eliminado el último elemento agregado.", "Refacción eliminada", HEIGHT, frameIcon);
+      refact.dequeue_C();
+      JOptionPane.showMessageDialog(null, "Se ha eliminado el primer elemento agregado.", "Refacción eliminada", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

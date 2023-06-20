@@ -1,29 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.Refacts_queue;
 import javax.swing.JOptionPane;
 import model.Refacts;
 
-/**
- *
- * @author Beto
- */
 public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form NewJInternalFrame
      */
-        Menu main;
-     Refacts_queue refacts;
-     Refacts re ;
-    public Refacts_Register_Edit(Menu window, Refacts_queue refact) {
+    Refacts_queue refactsQueue = new Refacts_queue();
+    int id;
+
+    public Refacts_Register_Edit(Refacts_queue refact) {
         initComponents();
-         main = window;
-        refacts = refact;
+        refactsQueue = refact;
     }
 
     /**
@@ -54,6 +45,8 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -163,18 +156,33 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
             }
         });
 
+        lblId.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblId.setForeground(new java.awt.Color(255, 255, 255));
+        lblId.setText("Id:");
+
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(81, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPedido)
                     .addComponent(lblEstado)
                     .addComponent(lblFechaSalida)
                     .addComponent(lblCelular)
-                    .addComponent(lblCliente))
+                    .addComponent(lblCliente)
+                    .addComponent(lblId))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
@@ -182,39 +190,45 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
                             .addComponent(comboxProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboxCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboxUnits, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSearch))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(btnAdd)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnSearch)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(rbtnGood)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtnMiddle)
-                        .addGap(12, 12, 12)
-                        .addComponent(rbtnBad)
-                        .addGap(51, 51, 51))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEdit)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBack)
-                        .addGap(102, 102, 102))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(32, 32, 32))))
+                                .addComponent(btnEdit)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBack)
+                                .addGap(51, 51, 51))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(rbtnGood)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbtnMiddle)
+                                .addGap(12, 12, 12)
+                                .addComponent(rbtnBad)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblId, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSearch)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPedido)
                     .addComponent(comboxUnits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,11 +237,9 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
                     .addComponent(lblCliente)
                     .addComponent(comboxProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCelular)
-                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnSearch))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCelular)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEstado)
@@ -244,7 +256,7 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
                         .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnBack))
                     .addComponent(btnEdit))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -266,16 +278,14 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtPriceActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        
-        int units =  comboxUnits.getSelectedIndex();
-        String product = comboxProduct.getSelectedItem().toString();
-        double price = Double.parseDouble(txtPrice.getText());   
+        int id = Integer.parseInt(txtId.getText());
+        int units = comboxUnits.getSelectedIndex();
+        String productName = comboxProduct.getSelectedItem().toString();
+        double price = Double.parseDouble(txtPrice.getText());
         String category = comboxCategory.getSelectedItem().toString();
-      
-      
-        
+
         String status = "";
-        
+
         if (rbtnGood.isSelected()) {
             status = "Bueno";
         }
@@ -285,53 +295,54 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
         if (rbtnBad.isSelected()) {
             status = "Malo";
         }
-        
-        refacts.enqueue_C(units, product, price, category, status);
-        
+
+        refactsQueue.enqueue_C(id, units, productName, price, category, status);
+
+        txtId.setText(null);
         comboxUnits.setSelectedIndex(0);
         comboxProduct.setSelectedIndex(0);
-        txtPrice.setText("");
+        txtPrice.setText(null);
         comboxCategory.setSelectedIndex(0);
         rbtnGood.setSelected(false);
         rbtnMiddle.setSelected(false);
         rbtnBad.setSelected(false);
-        
+
         JOptionPane.showMessageDialog(null, "Registrado correctamente");
-        refacts.recorrerCola();
-        
+        refactsQueue.recorrerCola();
+
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        int units =  comboxUnits.getSelectedIndex();
-        String product = comboxProduct.getSelectedItem().toString();
-        double price = Double.parseDouble(txtPrice.getText());   
-        String category = comboxCategory.getSelectedItem().toString();
-         
-       String status = "";
-        
+        int newUnit = comboxUnits.getSelectedIndex();
+        String newProductname = comboxProduct.getSelectedItem().toString();
+        double newPrecio = Double.parseDouble(txtPrice.getText());
+        String newCategory = comboxCategory.getSelectedItem().toString();
+
+        String newProductState = "";
+
         if (rbtnGood.isSelected()) {
-            status = "Bueno";
+            newProductState = "Bueno";
         }
         if (rbtnMiddle.isSelected()) {
-            status = "Medio";
+            newProductState = "Medio";
         }
         if (rbtnBad.isSelected()) {
-            status = "Malo";
+            newProductState = "Malo";
         }
-        
-        refacts.updateRefact(name,product, units, price, category, status);
-        
-        
-        comboxUnits.setSelectedIndex(re.getUnits());
-        comboxProduct.setSelectedItem(re.getProductName());
-        txtPrice.setText("");
-        comboxCategory.setSelectedItem(re.getProductClass());
+
+        refactsQueue.updateRefact(id, newProductname, newUnit, newPrecio, newCategory, newProductState);
+        JOptionPane.showMessageDialog(null, "Se edito con exito", "Refacción editar", HEIGHT, frameIcon);
+
+        comboxUnits.setSelectedIndex(0);
+        comboxProduct.setSelectedItem(0);
+        txtPrice.setText(null);
+        comboxCategory.setSelectedItem(0);
         rbtnGood.setSelected(false);
         rbtnMiddle.setSelected(false);
         rbtnBad.setSelected(false);
-        
+
         comboxUnits.requestFocus();
-        
+
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -340,8 +351,41 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        id = Integer.parseInt(txtId.getText());
+        if (txtId.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo id vacio");
+            return;
+        }
+
+        Refacts refacts = refactsQueue.getRefacts(Integer.parseInt(txtId.getText()));
+        id = Integer.parseInt(txtId.getText());
+        
+        if (refacts != null) {
+            txtId.setText(String.valueOf(refacts.getId()));
+            comboxUnits.setSelectedIndex(refacts.getUnits());
+            comboxProduct.setSelectedItem(refacts.getProductName());
+            txtPrice.setText(String.valueOf(refacts.getPrice()));
+            comboxCategory.setSelectedItem(refacts.getCategory());
+            comboxUnits.setSelectedItem(refacts.getUnits());
+            if(refacts.getProuctStatus().equals("Bueno")){
+                rbtnGood.setSelected(true);
+            }
+            
+            if(refacts.getProuctStatus().equals("Medio")){
+                rbtnMiddle.setSelected(true);
+            }
+            
+            if(refacts.getProuctStatus().equals("Malo")){
+                rbtnBad.setSelected(true);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró ningún cliente con el correo electrónico proporcionado.", "Cliente busqueda", HEIGHT, frameIcon);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -359,10 +403,12 @@ public class Refacts_Register_Edit extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblFechaSalida;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblPedido;
     private javax.swing.JRadioButton rbtnBad;
     private javax.swing.JRadioButton rbtnGood;
     private javax.swing.JRadioButton rbtnMiddle;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
 }
