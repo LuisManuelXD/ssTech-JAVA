@@ -140,11 +140,11 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addGap(75, 75, 75)
                         .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
+                        .addGap(53, 53, 53)
                         .addComponent(btnEdit)
-                        .addGap(18, 18, 18)
+                        .addGap(52, 52, 52)
                         .addComponent(btnBack))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -167,8 +167,8 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
                                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(53, 53, 53)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbID)))
+                                    .addComponent(jlbID)
+                                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -203,7 +203,7 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnAdd)
                         .addComponent(btnBack))
                     .addComponent(btnEdit))
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -252,8 +252,8 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         String description = jtaDescription.getText();
-        String identifier = txtID.getText();
-        int id = Integer.parseInt(identifier);
+        int id = Integer.parseInt(txtID.getText());
+        String identifier = String.valueOf(id);
         double price = Double.parseDouble(txtPrice.getText());
         int type = 0;
         

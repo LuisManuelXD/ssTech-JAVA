@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.Service_stack;
+
 /**
  *
  * @author luisf
@@ -13,8 +15,13 @@ public class Service_Search extends javax.swing.JInternalFrame {
     /**
      * Creates new form jtfSearchService
      */
-    public Service_Search() {
+    Menu main;
+    Service_stack sstack;
+    
+    public Service_Search(Menu window, Service_stack sstk) {
         initComponents();
+        main = window;
+        sstack = sstk;
     }
 
     /**
@@ -116,7 +123,7 @@ public class Service_Search extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,7 +141,12 @@ public class Service_Search extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        int wanted = Integer.parseInt(txtSearch.getText());
+        String found = String.valueOf(wanted);
+        sstack.search_S(found);
+        
+        txtSearch.setText("");
+        txtSearch.requestFocus();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
