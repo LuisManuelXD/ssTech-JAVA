@@ -404,7 +404,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIAddRefactsActionPerformed
 
     private void jMISearchRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchRefactsActionPerformed
-        Refacts_Search rafactsSearch = new Refacts_Search(null,queue_r);
+        Refacts_Search rafactsSearch = new Refacts_Search(queue_r);
         jdpMenu.add(rafactsSearch);
         rafactsSearch.show();
     }//GEN-LAST:event_jMISearchRefactsActionPerformed
@@ -440,7 +440,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIEditRefactsActionPerformed
 
     private void jMIDeleteRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteRefactsActionPerformed
-        Refacts_Delete rafactsDelete = new Refacts_Delete();
+        Refacts_Delete rafactsDelete = new Refacts_Delete(null,queue_r);
         jdpMenu.add(rafactsDelete);
         rafactsDelete.show();
     }//GEN-LAST:event_jMIDeleteRefactsActionPerformed
