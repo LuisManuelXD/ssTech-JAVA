@@ -493,19 +493,20 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIEditToolActionPerformed
 
     private void jMIAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddClientActionPerformed
-        Client_Register_Edit clientRegister = new Client_Register_Edit();
+        Client_Register_Edit clientRegister = new Client_Register_Edit(queue_c);
         jdpMenu.add(clientRegister);
         clientRegister.show();
+        this.isVisible();
     }//GEN-LAST:event_jMIAddClientActionPerformed
 
     private void jMIEditClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditClientActionPerformed
-        Client_Register_Edit clientEdit = new Client_Register_Edit();
+        Client_Register_Edit clientEdit = new Client_Register_Edit(queue_c);
         jdpMenu.add(clientEdit);
         clientEdit.show();
     }//GEN-LAST:event_jMIEditClientActionPerformed
 
     private void jMISearchClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchClientActionPerformed
-        Client_Search clientSearch = new Client_Search();
+        Client_Search clientSearch = new Client_Search(queue_c);
         jdpMenu.add(clientSearch);
         clientSearch.show();
     }//GEN-LAST:event_jMISearchClientActionPerformed

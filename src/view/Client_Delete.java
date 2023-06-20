@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Beto
- */
 public class Client_Delete extends javax.swing.JInternalFrame {
 
     /**
@@ -129,7 +121,6 @@ public class Client_Delete extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
