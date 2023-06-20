@@ -11,13 +11,11 @@ public class Refacts_queue {
         this.queue_r = null;
     }
     
-<<<<<<< HEAD
+
     //add function
-    public void enqueue_C(int u, String p_n, double p, String p_c, boolean p_s){ 
-=======
+    
     
     public void enqueue_C(int u, String p_n, double p, String p_c, String p_s){ //add function
->>>>>>> origin/master
         Refacts newRefacts = new Refacts(u, p_n, p, p_c, p_s);
         
         if(queue_r == null){
@@ -100,6 +98,5 @@ public class Refacts_queue {
                 aux = aux.getNext();
             }
         }
-    }
-    
+    } 
 }

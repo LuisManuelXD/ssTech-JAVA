@@ -44,13 +44,13 @@ public class Service_Search extends javax.swing.JInternalFrame {
 
         jTableService.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jTableService.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

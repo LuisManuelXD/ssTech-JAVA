@@ -13,7 +13,6 @@ public class Service_stack {
     
     public void push_S(String d, double p, int id, int t){
         Service newService = new Service(d, p, id, t);
-        
         if(stack_s == null){
             stack_s = newService;
         } else {
@@ -42,7 +41,7 @@ public class Service_stack {
         }
     }
     
-    public void edit_S(String search, String id, double price, int type, String description){
+    public void edit_S(String search, double price, int type, String description){
         Service aux = stack_s;
         boolean find = false;
         if(stack_s == null) {
@@ -53,7 +52,7 @@ public class Service_stack {
                     System.out.println("Datos encontrados:\nDescripcion: " + aux.getDescription()+ "\nPrecio: " + aux.getPrice()+ "\nID:: " + aux.getId()
                 + "\nTipo: " + aux.getType());
                     System.out.println("Ingrese los nuevos cambios:");
-                    aux.setId(Integer.parseInt(id));
+                    aux.setId(Integer.parseInt(search));
                     aux.setPrice(price);
                     aux.setType(type);
                     aux.setDescription(description);

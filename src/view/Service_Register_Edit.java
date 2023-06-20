@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.Service_stack;
+
 /**
  *
  * @author luisf
@@ -13,8 +15,14 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
     /**
      * Creates new form jtfRegisterService
      */
-    public Service_Register_Edit() {
+    
+    Menu main;
+    Service_stack servicestk;
+    
+    public Service_Register_Edit(Menu window, Service_stack sstk) {
         initComponents();
+        main = window;
+        servicestk = sstk;
     }
 
     /**
@@ -220,11 +228,50 @@ public class Service_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_rbtnMantCorrectivoActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        String description = jtaDescription.getText();
+        int id = Integer.parseInt(txtID.getText());
+        double price = Double.parseDouble(txtPrice.getText());
+        int type = 0;
+        
+        if (rbtnMantPreventivo.isSelected()) {
+            type = 1;
+        }
+        if (rbtnMantCorrectivo.isSelected()) {
+            type = 2;
+        }
+        
+        servicestk.push_S(description, price, id, type);
+        
+        jtaDescription.setText("");
+        txtID.setText("");
+        txtPrice.setText("");
+        rbtnMantPreventivo.setSelected(false);
+        rbtnMantCorrectivo.setSelected(false);
+        txtID.requestFocus();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        String description = jtaDescription.getText();
+        String identifier = txtID.getText();
+        int id = Integer.parseInt(identifier);
+        double price = Double.parseDouble(txtPrice.getText());
+        int type = 0;
+        
+        if (rbtnMantPreventivo.isSelected()) {
+            type = 1;
+        }
+        if (rbtnMantCorrectivo.isSelected()) {
+            type = 2;
+        }
+        
+        servicestk.edit_S(identifier, price, type, description);
+        
+        jtaDescription.setText("");
+        txtID.setText("");
+        txtPrice.setText("");
+        rbtnMantPreventivo.setSelected(false);
+        rbtnMantCorrectivo.setSelected(false);
+        txtID.requestFocus();
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
