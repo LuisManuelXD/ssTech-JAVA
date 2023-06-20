@@ -445,19 +445,19 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIDeleteRefactsActionPerformed
 
     private void jMIEditOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditOrderServiceActionPerformed
-        ServiceOrder_Register_Edit serviceOrderEdit = new ServiceOrder_Register_Edit(null, stack_so);
+        ServiceOrder_Register_Edit serviceOrderEdit = new ServiceOrder_Register_Edit(this, stack_so);
         jdpMenu.add(serviceOrderEdit);
         serviceOrderEdit.show();
     }//GEN-LAST:event_jMIEditOrderServiceActionPerformed
 
     private void jMISearchOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchOrderServiceActionPerformed
-        ServiceOrder_Search serviceOrderSearch = new ServiceOrder_Search(null, stack_so);
+        ServiceOrder_Search serviceOrderSearch = new ServiceOrder_Search(this, stack_so);
         jdpMenu.add(serviceOrderSearch);
         serviceOrderSearch.show();
     }//GEN-LAST:event_jMISearchOrderServiceActionPerformed
 
     private void jMIDeleteOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteOrderServiceActionPerformed
-        ServiceOrder_Delete serviceOrderDelete  = new ServiceOrder_Delete();
+        ServiceOrder_Delete serviceOrderDelete  = new ServiceOrder_Delete(null, stack_so);
         jdpMenu.add(serviceOrderDelete);
         serviceOrderDelete.show();
     }//GEN-LAST:event_jMIDeleteOrderServiceActionPerformed
@@ -475,7 +475,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISearchServiceActionPerformed
 
     private void jMIDeleteServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteServiceActionPerformed
-        Service_Delete serviceDelete = new Service_Delete();
+        Service_Delete serviceDelete = new Service_Delete(null, stack_s);
         jdpMenu.add(serviceDelete);
         serviceDelete.show();
     }//GEN-LAST:event_jMIDeleteServiceActionPerformed
