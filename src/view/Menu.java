@@ -421,13 +421,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIAddServiceActionPerformed
 
     private void jMIDeleteToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteToolActionPerformed
-        Tool_Delete toolDelete = new Tool_Delete();
+        Tool_Delete toolDelete = new Tool_Delete(stack_t);
         jdpMenu.add(toolDelete);
         toolDelete.show();
     }//GEN-LAST:event_jMIDeleteToolActionPerformed
 
     private void jMISearchToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchToolActionPerformed
-        Tool_Search toolSearch = new Tool_Search();
+        Tool_Search toolSearch = new Tool_Search(stack_t);
         jdpMenu.add(toolSearch);
         toolSearch.show();
     }//GEN-LAST:event_jMISearchToolActionPerformed
@@ -481,13 +481,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIDeleteServiceActionPerformed
 
     private void jMIAddToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddToolActionPerformed
-        Tool_Register_Edit toolRegister = new Tool_Register_Edit();
+        Tool_Register_Edit toolRegister = new Tool_Register_Edit(stack_t);
         jdpMenu.add(toolRegister);
         toolRegister.show();
     }//GEN-LAST:event_jMIAddToolActionPerformed
 
     private void jMIEditToolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditToolActionPerformed
-        Tool_Register_Edit toolEdit = new Tool_Register_Edit();
+        Tool_Register_Edit toolEdit = new Tool_Register_Edit(stack_t);
         jdpMenu.add(toolEdit);
         toolEdit.show();
     }//GEN-LAST:event_jMIEditToolActionPerformed
