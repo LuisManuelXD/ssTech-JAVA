@@ -11,13 +11,7 @@ public class Refacts_queue {
         this.queue_r = null;
     }
     
-<<<<<<< HEAD
-    
-    public void enqueue_C(int u, String p_n, double p, String p_c, String p_s){ //add function
-=======
-    //add function
-    public void enqueue_C(int u, String p_n, double p, String p_c, boolean p_s){ 
->>>>>>> origin/luisBranch
+    public void enqueue_C(int u, String p_n, double p, String p_c, String p_s){ 
         Refacts newRefacts = new Refacts(u, p_n, p, p_c, p_s);
         
         if(queue_r == null){
@@ -100,6 +94,5 @@ public class Refacts_queue {
                 aux = aux.getNext();
             }
         }
-    }
-    
+    } 
 }
