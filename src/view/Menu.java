@@ -398,7 +398,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMIAddRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddRefactsActionPerformed
-        Refacts_Register_Edit rafactsRegister = new Refacts_Register_Edit(null,queue_r);
+        Refacts_Register_Edit rafactsRegister = new Refacts_Register_Edit(queue_r);
         jdpMenu.add(rafactsRegister);
         rafactsRegister.show();
     }//GEN-LAST:event_jMIAddRefactsActionPerformed
@@ -434,13 +434,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISearchToolActionPerformed
 
     private void jMIEditRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditRefactsActionPerformed
-        Refacts_Register_Edit rafactsEdit = new Refacts_Register_Edit(null,queue_r);
+        Refacts_Register_Edit rafactsEdit = new Refacts_Register_Edit(queue_r);
         jdpMenu.add(rafactsEdit);
         rafactsEdit.show();
     }//GEN-LAST:event_jMIEditRefactsActionPerformed
 
     private void jMIDeleteRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteRefactsActionPerformed
-        Refacts_Delete rafactsDelete = new Refacts_Delete(null,queue_r);
+        Refacts_Delete rafactsDelete = new Refacts_Delete(queue_r);
         jdpMenu.add(rafactsDelete);
         rafactsDelete.show();
     }//GEN-LAST:event_jMIDeleteRefactsActionPerformed

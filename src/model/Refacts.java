@@ -1,21 +1,31 @@
 package model;
 
 public class Refacts {
+    int id;
     int units;
     String productName;
     double price;
-    String productClass;
+    String category;
     String prouctStatus;
     
     Refacts next;
 
-    public Refacts(int units, String productName, double price, String productClass, String prouctStatus) {
+    public Refacts(int id, int units, String productName, double price, String category, String prouctStatus) {
+        this.id = id;
         this.units = units;
         this.productName = productName;
         this.price = price;
-        this.productClass = productClass;
+        this.category = category;
         this.prouctStatus = prouctStatus;
         next = null;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUnits() {
@@ -42,12 +52,12 @@ public class Refacts {
         this.price = price;
     }
 
-    public String getProductClass() {
-        return productClass;
+    public String getCategory() {
+        return category;
     }
 
-    public void setProductClass(String productClass) {
-        this.productClass = productClass;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getProuctStatus() {

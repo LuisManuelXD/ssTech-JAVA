@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.Refacts_queue;
@@ -11,10 +7,6 @@ import model.Refacts;
 import javax.swing.table.DefaultTableModel;
 
 
-/**
- *
- * @author Beto
- */
 public class Refacts_Search extends javax.swing.JInternalFrame {
 
     Refacts_queue refact_queue = new Refacts_queue();
@@ -33,12 +25,9 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
         
         for(Refacts r : refactGet) {
             table.addRow(new Object[]{
-                r.getUnits(), r.getProductName(), r.getPrice(), r.getProductClass(), r.getProuctStatus()
+                r.getUnits(), r.getProductName(), r.getPrice(), r.getCategory(), r.getProuctStatus()
             });
         }
-        
-        
-        
     }
 
     /**
@@ -163,12 +152,12 @@ public class Refacts_Search extends javax.swing.JInternalFrame {
             return;
         }
 
-        Refacts re = refact_queue.getRefactByPrice(txtSearch.getText());
+        Refacts re = refact_queue.getRefacts(Integer.parseInt(txtSearch.getText()));
         
         if (re != null) {
             JOptionPane.showMessageDialog(null, "Refacción encontrada:"  + 
                 "\nUnidades: " + re.getUnits()+ "\nProducto: " + re.getProductName() + "\nPrecio: " + 
-                re.getPrice()+ "\nCategoría: " + re.getProductClass() + "\nEstado: " + re.getProuctStatus());
+                re.getPrice()+ "\nCategoría: " + re.getCategory()+ "\nEstado: " + re.getProuctStatus());
         } else {
             JOptionPane.showMessageDialog(null, "No se encontró ninguna refacción con el precio proporcionado.", "Refacción busqueda", HEIGHT, frameIcon);
         }
