@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ServiceOrder_stack;
 import javax.swing.ImageIcon;
 
 /**
@@ -15,8 +16,13 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
     /**
      * Creates new form ServiceOrder_Show
      */
-    public ServiceOrder_Search() {
+    Menu main;
+    ServiceOrder_stack soStack;
+    
+    public ServiceOrder_Search(Menu window, ServiceOrder_stack sotk) {
         initComponents();
+        main = window;
+        soStack = sotk;
     }
 
     /**
@@ -136,7 +142,12 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        String wanted = txtSearch.getText();
+        
+        soStack.search_SO(wanted);
+        
+        txtSearch.setText("");
+        txtSearch.requestFocus();
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

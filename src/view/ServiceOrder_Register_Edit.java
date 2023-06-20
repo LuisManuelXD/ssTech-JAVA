@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.ServiceOrder_stack;
+
 /**
  *
  * @author nerif
@@ -13,8 +15,13 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
     /**
      * Creates new form ServiceOrder_Register
      */
-    public ServiceOrder_Register_Edit() {
+    Menu main;
+    ServiceOrder_stack soStack;
+    
+    public ServiceOrder_Register_Edit(Menu window, ServiceOrder_stack soStk) {
         initComponents();
+        main = window;
+        soStack = soStk;
     }
 
     /**
@@ -244,11 +251,58 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        String ordernum = txtNPedido.getText();
+        String client = txtCliente.getText();
+        String phone = txtNCelular.getText();
+        String dBegin = txtFSalida.getText();
+        String dEnd = txtFEntrega.getText();
+        int state = 0;
+        String status = "";
+        
+        if (rbtnEspera.isSelected()) {
+            state = 1;
+        }
+        if (rbtnProceso.isSelected()) {
+            state = 2;
+        }
+        
+        soStack.add_SO(ordernum, client, phone, state, dBegin, dEnd, dEnd, WIDTH, WIDTH, WIDTH);
+        
+        txtNPedido.setText("");
+        txtCliente.setText("");
+        txtNCelular.setText("");
+        txtFSalida.setText("");
+        txtFEntrega.setText("");
+        rbtnEspera.setSelected(false);
+        rbtnProceso.setSelected(false);
+        txtNPedido.requestFocus();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        String search = txtNPedido.getText();
+        String client = txtCliente.getText();
+        String phone = txtNCelular.getText();
+        String dBegin = txtFSalida.getText();
+        String dEnd = txtFEntrega.getText();
+        int state = 0;
+        
+        if (rbtnEspera.isSelected()) {
+            state = 1;
+        }
+        if (rbtnProceso.isSelected()) {
+            state = 2;
+        }
+        
+        soStack.edit_SO(search, client, phone, state, dBegin, dEnd);
+        
+        txtNPedido.setText("");
+        txtCliente.setText("");
+        txtNCelular.setText("");
+        txtFSalida.setText("");
+        txtFEntrega.setText("");
+        rbtnEspera.setSelected(false);
+        rbtnProceso.setSelected(false);
+        txtNPedido.requestFocus();
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

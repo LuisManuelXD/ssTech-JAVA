@@ -44,7 +44,7 @@ public class ServiceOrder_stack {
         }
     }
     
-    public void edit_SO(String search, String client, String phone, String status, String oDate, String dDate){
+    public void edit_SO(String search, String client, String phone, int status, String oDate, String dDate){
         ServiceOrder aux = stack_so;
         boolean find = false;
         if(stack_so == null) {
@@ -58,7 +58,7 @@ public class ServiceOrder_stack {
                     System.out.println("Número de celular:");
                     aux.setCellNumber(phone);
                     System.out.println("Estado:");
-                    aux.setState(Integer.parseInt(status));
+                    aux.setState(status);
                     System.out.println("Fecha de realización:");
                     aux.setOrderDate(oDate);
                     System.out.println("Fecha de envío:");

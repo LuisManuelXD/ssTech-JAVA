@@ -409,13 +409,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISearchRefactsActionPerformed
 
     private void jMIAddOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddOrderServiceActionPerformed
-        ServiceOrder_Register_Edit serviceOrderRegister = new ServiceOrder_Register_Edit();
+        ServiceOrder_Register_Edit serviceOrderRegister = new ServiceOrder_Register_Edit(null, stack_so);
         jdpMenu.add(serviceOrderRegister);
         serviceOrderRegister.show();
     }//GEN-LAST:event_jMIAddOrderServiceActionPerformed
 
     private void jMIAddServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddServiceActionPerformed
-        Service_Register_Edit serviceRegister = new Service_Register_Edit();
+        Service_Register_Edit serviceRegister = new Service_Register_Edit(null, stack_s);
         jdpMenu.add(serviceRegister);
         serviceRegister.show();
     }//GEN-LAST:event_jMIAddServiceActionPerformed
@@ -445,13 +445,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIDeleteRefactsActionPerformed
 
     private void jMIEditOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditOrderServiceActionPerformed
-        ServiceOrder_Register_Edit serviceOrderEdit = new ServiceOrder_Register_Edit();
+        ServiceOrder_Register_Edit serviceOrderEdit = new ServiceOrder_Register_Edit(null, stack_so);
         jdpMenu.add(serviceOrderEdit);
         serviceOrderEdit.show();
     }//GEN-LAST:event_jMIEditOrderServiceActionPerformed
 
     private void jMISearchOrderServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchOrderServiceActionPerformed
-        ServiceOrder_Search serviceOrderSearch = new ServiceOrder_Search();
+        ServiceOrder_Search serviceOrderSearch = new ServiceOrder_Search(null, stack_so);
         jdpMenu.add(serviceOrderSearch);
         serviceOrderSearch.show();
     }//GEN-LAST:event_jMISearchOrderServiceActionPerformed
@@ -463,7 +463,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIDeleteOrderServiceActionPerformed
 
     private void jMIEditServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditServiceActionPerformed
-        Service_Register_Edit serviceEdit = new Service_Register_Edit();
+        Service_Register_Edit serviceEdit = new Service_Register_Edit(null, stack_s);
         jdpMenu.add(serviceEdit);
         serviceEdit.show();
     }//GEN-LAST:event_jMIEditServiceActionPerformed
