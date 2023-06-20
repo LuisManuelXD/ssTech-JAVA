@@ -57,8 +57,10 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
+        rbtnProceso.setBackground(new java.awt.Color(0, 102, 102));
         btngEstado.add(rbtnProceso);
         rbtnProceso.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        rbtnProceso.setForeground(new java.awt.Color(204, 204, 204));
         rbtnProceso.setText("En proceso");
         rbtnProceso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rbtnProceso.addActionListener(new java.awt.event.ActionListener() {
@@ -89,8 +91,10 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         lblPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lblPedido1.setText("Número de pedido:");
 
+        rbtnEspera.setBackground(new java.awt.Color(0, 102, 102));
         btngEstado.add(rbtnEspera);
         rbtnEspera.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        rbtnEspera.setForeground(new java.awt.Color(204, 204, 204));
         rbtnEspera.setText("En espera");
         rbtnEspera.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 

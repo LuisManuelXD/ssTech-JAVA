@@ -91,7 +91,7 @@ public class ServiceOrder_stack {
         }
     }
     
-    public ServiceOrder[] getAllServiceOrder() {
+    public ServiceOrder[] getAllServicesOrders() {
         ServiceOrder[] serviceOrders = new ServiceOrder[getSize()];
         ServiceOrder aux = stack_so;
         int index = 0;

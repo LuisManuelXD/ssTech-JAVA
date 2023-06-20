@@ -11,8 +11,8 @@ public class Service_stack {
         this.stack_s = null;
     }
     
-    public void push_S(String d, double p, int id, int t){
-        Service newService = new Service(d, p, id, t);
+    public void push_S(String d, double p, int identifier, int t){
+        Service newService = new Service(d, p, identifier, t);
         if(stack_s == null){
             stack_s = newService;
         } else {
@@ -32,6 +32,7 @@ public class Service_stack {
                 if (aux.getId() == Integer.parseInt(wanted)) {
                     System.out.println("Datos encontrados:\nDescripcion: " + aux.getDescription()+ "\nPrecio: " + aux.getPrice()+ "\nID:: " + aux.getId()
                 + "\nTipo: " + aux.getType());
+                    find = true;
                 }
                 aux = aux.getNext();
             }
@@ -49,13 +50,11 @@ public class Service_stack {
         } else {
             while ( aux != null && find != true){
                 if (aux.getId() == Integer.parseInt(search)) {
-                    System.out.println("Datos encontrados:\nDescripcion: " + aux.getDescription()+ "\nPrecio: " + aux.getPrice()+ "\nID:: " + aux.getId()
-                + "\nTipo: " + aux.getType());
-                    System.out.println("Ingrese los nuevos cambios:");
                     aux.setId(Integer.parseInt(search));
                     aux.setPrice(price);
                     aux.setType(type);
                     aux.setDescription(description);
+                    find = true;
                 }
                 aux = aux.getNext();
             }
@@ -90,5 +89,29 @@ public class Service_stack {
                 aux = aux.getNext();
             }
         }
+    }
+    
+    public Service[] getAllServices() {
+        Service[] service = new Service[getSize()];
+        Service aux = stack_s;
+        int index = 0;
+        
+        while (aux != null) {
+            service[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return service;
+    }
+    
+    private int getSize() {
+        int count = 0;
+        Service aux = stack_s;
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        return count;
     }
 }
