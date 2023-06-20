@@ -28,8 +28,6 @@ public class Client_Search extends javax.swing.JInternalFrame {
                 client.getName(), client.getLastName(), client.getAge(), client.getMail(), client.getCellPhone()
             });
         }
-
-        
     }
 
     /**
@@ -150,7 +148,15 @@ public class Client_Search extends javax.swing.JInternalFrame {
             return;
         }
 
-        clientQueue.search_C(txtSearch.getText());
+        Client client = clientQueue.getClientByMail(txtSearch.getText());
+        
+        if (client != null) {
+            JOptionPane.showMessageDialog(null, "Cliente encontrado:\nNombre: " + client.getName() + 
+                "\nApellido: " + client.getLastName() + "\nEdad: " + client.getAge() + "\nCorreo: " + 
+                client.getMail() + "\nCelular: " + client.getCellPhone());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró ningún cliente con el correo electrónico proporcionado.", "Cliente busqueda", HEIGHT, frameIcon);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

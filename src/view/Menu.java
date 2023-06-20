@@ -512,7 +512,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISearchClientActionPerformed
 
     private void jMIDeleteClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIDeleteClientActionPerformed
-        Client_Delete clientDelete = new Client_Delete();
+        Client_Delete clientDelete = new Client_Delete(queue_c);
         jdpMenu.add(clientDelete);
         clientDelete.show();
     }//GEN-LAST:event_jMIDeleteClientActionPerformed
