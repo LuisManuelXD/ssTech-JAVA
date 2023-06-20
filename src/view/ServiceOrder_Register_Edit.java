@@ -1,6 +1,8 @@
 package view;
 
 import controller.ServiceOrder_stack;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
 import model.ServiceOrder;
 
 /**
@@ -82,14 +84,37 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
                 txtClienteActionPerformed(evt);
             }
         });
+        txtCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtClienteKeyTyped(evt);
+            }
+        });
 
         lblFechaSalida1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblFechaSalida1.setForeground(new java.awt.Color(255, 255, 255));
         lblFechaSalida1.setText("Fecha de pedido:");
 
+        txtNCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNCelularKeyTyped(evt);
+            }
+        });
+
         lblPedido1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lblPedido1.setText("Número de pedido:");
+
+        txtNPedido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNPedidoKeyTyped(evt);
+            }
+        });
+
+        txtFSalida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFSalidaKeyTyped(evt);
+            }
+        });
 
         rbtnEspera.setBackground(new java.awt.Color(0, 102, 102));
         btngEstado.add(rbtnEspera);
@@ -106,6 +131,12 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         jlbTitulo1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         jlbTitulo1.setText("Registrar / Editar Orden de Servicio");
+
+        txtFEntrega.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFEntregaKeyTyped(evt);
+            }
+        });
 
         lblCliente1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblCliente1.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,6 +284,26 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtClienteActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if (txtNPedido.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
+        if (txtNCelular.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
+        if (txtFSalida.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
+        if (txtFEntrega.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "No deje campos vacíos.");
+            return;
+        }
+
         String ordernum = txtNPedido.getText();
         String client = txtCliente.getText();
         String phone = txtNCelular.getText();
@@ -296,6 +347,8 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         
         soStack.edit_SO(search, client, phone, state, dBegin, dEnd);
         
+        JOptionPane.showMessageDialog(null, "Datos cambiados con éxito", "EDICIÓN REALIZADA", HEIGHT, frameIcon);
+        
         txtNPedido.setText("");
         txtCliente.setText("");
         txtNCelular.setText("");
@@ -310,6 +363,51 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtNPedidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNPedidoKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && (txtNPedido.getText().length() < 6 && txtNPedido.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números y no mayor a 5 dígitos.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtNPedidoKeyTyped
+
+    private void txtClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteKeyTyped
+        char l = evt.getKeyChar();
+        
+        if (!Character.isAlphabetic(l) && (txtCliente.getText().length() < 20 && txtCliente.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo letras, máximo 20.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtClienteKeyTyped
+
+    private void txtNCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNCelularKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && (txtNCelular.getText().length() < 11 && txtNCelular.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Ingrese sólo números y no mayor a 10 dígitos.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtNCelularKeyTyped
+
+    private void txtFSalidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFSalidaKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && n != '-' && n != '/' && (txtFEntrega.getText().length() < 11 && txtFEntrega.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Sólo se permiten números, guiones y diagonales.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtFSalidaKeyTyped
+
+    private void txtFEntregaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFEntregaKeyTyped
+        char n = evt.getKeyChar();
+        
+        if (!Character.isDigit(n) && n != '-' && n != '/' && (txtFEntrega.getText().length() < 11 && txtFEntrega.getText().length() > 0)) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Sólo se permiten números, guiones y diagonales.", "!ATENCIÓN¡", HEIGHT, frameIcon);
+        }
+    }//GEN-LAST:event_txtFEntregaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
