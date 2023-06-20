@@ -90,4 +90,30 @@ public class ServiceOrder_stack {
             }
         }
     }
+    
+    public ServiceOrder[] getAllServiceOrder() {
+        ServiceOrder[] serviceOrders = new ServiceOrder[getSize()];
+        ServiceOrder aux = stack_so;
+        int index = 0;
+        
+        while (aux != null) {
+            serviceOrders[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return serviceOrders;
+    }
+    
+    private int getSize() {
+        int count = 0;
+        ServiceOrder aux = stack_so;
+        
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        
+        return count;
+    }
 }
