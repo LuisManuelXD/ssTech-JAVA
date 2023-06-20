@@ -5,6 +5,7 @@ import controller.Refacts_queue;
 import controller.ServiceOrder_stack;
 import controller.Service_stack;
 import controller.Tools_stack;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -397,13 +398,13 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMIAddRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIAddRefactsActionPerformed
-        Refacts_Register_Edit rafactsRegister = new Refacts_Register_Edit();
+        Refacts_Register_Edit rafactsRegister = new Refacts_Register_Edit(null,queue_r);
         jdpMenu.add(rafactsRegister);
         rafactsRegister.show();
     }//GEN-LAST:event_jMIAddRefactsActionPerformed
 
     private void jMISearchRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchRefactsActionPerformed
-        Refacts_Search rafactsSearch = new Refacts_Search();
+        Refacts_Search rafactsSearch = new Refacts_Search(null,queue_r);
         jdpMenu.add(rafactsSearch);
         rafactsSearch.show();
     }//GEN-LAST:event_jMISearchRefactsActionPerformed
@@ -433,7 +434,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMISearchToolActionPerformed
 
     private void jMIEditRefactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditRefactsActionPerformed
-        Refacts_Register_Edit rafactsEdit = new Refacts_Register_Edit();
+        Refacts_Register_Edit rafactsEdit = new Refacts_Register_Edit(null,queue_r);
         jdpMenu.add(rafactsEdit);
         rafactsEdit.show();
     }//GEN-LAST:event_jMIEditRefactsActionPerformed
