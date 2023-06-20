@@ -101,4 +101,30 @@ public class Client_queue {
             }
         }
     }
+    
+    public Client[] getAllClients() {
+        Client[] clients = new Client[getSize()];
+        Client aux = queue_c;
+        int index = 0;
+        
+        while (aux != null) {
+            clients[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return clients;
+    }
+    
+    private int getSize() {
+        int count = 0;
+        Client aux = queue_c;
+        
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        
+        return count;
+    }
 }

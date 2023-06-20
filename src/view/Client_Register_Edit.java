@@ -9,12 +9,13 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
     /**
      * Creates new form Client_Register_Edit
      */
-    public Client_Register_Edit() {
+    public Client_Register_Edit(Client_queue clients) {
         initComponents();
         comboxEdad.addItem("Selecciona");
         for (int i = 0; i <= 100; i++) {
             comboxEdad.addItem(String.valueOf(i));
         }
+        clientQueue = clients;
     }
 
     /**
