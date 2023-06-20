@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.ServiceOrder_stack;
+import model.ServiceOrder;
 
 /**
  *
@@ -60,6 +57,7 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
+        rbtnProceso.setBackground(new java.awt.Color(0, 102, 102));
         btngEstado.add(rbtnProceso);
         rbtnProceso.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         rbtnProceso.setForeground(new java.awt.Color(204, 204, 204));
@@ -93,6 +91,7 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         lblPedido1.setForeground(new java.awt.Color(255, 255, 255));
         lblPedido1.setText("Número de pedido:");
 
+        rbtnEspera.setBackground(new java.awt.Color(0, 102, 102));
         btngEstado.add(rbtnEspera);
         rbtnEspera.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         rbtnEspera.setForeground(new java.awt.Color(204, 204, 204));
@@ -173,20 +172,23 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
                             .addGap(18, 18, 18)
                             .addComponent(txtFSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(lblFechaEntrega1)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(lblPedido1)
                             .addGap(18, 18, 18)
                             .addComponent(txtNPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(100, 100, 100)
-                            .addComponent(btnAdd)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblFechaEntrega1)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(70, 70, 70)
+                                    .addComponent(btnAdd)))
                             .addGap(18, 18, 18)
-                            .addComponent(btnEdit)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnBack))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(9, 9, 9)
+                                    .addComponent(btnEdit)
+                                    .addGap(41, 41, 41)
+                                    .addComponent(btnBack))
+                                .addComponent(txtFEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -257,7 +259,6 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
         String dBegin = txtFSalida.getText();
         String dEnd = txtFEntrega.getText();
         int state = 0;
-        String status = "";
         
         if (rbtnEspera.isSelected()) {
             state = 1;
@@ -266,7 +267,7 @@ public class ServiceOrder_Register_Edit extends javax.swing.JInternalFrame {
             state = 2;
         }
         
-        soStack.add_SO(ordernum, client, phone, state, dBegin, dEnd, dEnd, WIDTH, WIDTH, WIDTH);
+        soStack.add_SO(ordernum, client, phone, state, dBegin, dEnd, "", 0, 0, 0);
         
         txtNPedido.setText("");
         txtCliente.setText("");

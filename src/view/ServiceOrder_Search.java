@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.ServiceOrder_stack;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
+import model.ServiceOrder;
 
 /**
  *
@@ -17,12 +15,26 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
      * Creates new form ServiceOrder_Show
      */
     Menu main;
+    ServiceOrder so;
     ServiceOrder_stack soStack;
+    DefaultTableModel table = new DefaultTableModel();
     
     public ServiceOrder_Search(Menu window, ServiceOrder_stack sotk) {
         initComponents();
         main = window;
         soStack = sotk;
+        
+        String[] tittle = new String[]{"# Orden", "Estado", "Fecha Ini.", "Fecha Ent."};
+        table.setColumnIdentifiers(tittle);
+        tableServiceOrder.setModel(table);
+        
+        ServiceOrder[] serviceOrders = sotk.getAllServicesOrders();
+        
+        for(ServiceOrder serviceOrder : serviceOrders) {
+            table.addRow(new Object[]{
+                serviceOrder.getOrderNumber(),  serviceOrder.getState(),  serviceOrder.getDeliveryDate(),  serviceOrder.getOrderDate()
+            });
+        }
     }
 
     /**
@@ -39,7 +51,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableServiceOrder = new javax.swing.JTable();
+        tableServiceOrder = new javax.swing.JTable();
         jlbTitulo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -69,19 +81,19 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
             }
         });
 
-        jTableServiceOrder.setModel(new javax.swing.table.DefaultTableModel(
+        tableServiceOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jTableServiceOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane1.setViewportView(jTableServiceOrder);
+        tableServiceOrder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane1.setViewportView(tableServiceOrder);
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,7 +136,7 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,7 +155,6 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String wanted = txtSearch.getText();
-        
         soStack.search_SO(wanted);
         
         txtSearch.setText("");
@@ -161,8 +172,8 @@ public class ServiceOrder_Search extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableServiceOrder;
     private javax.swing.JLabel jlbTitulo;
+    private javax.swing.JTable tableServiceOrder;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

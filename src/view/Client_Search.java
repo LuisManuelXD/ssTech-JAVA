@@ -1,20 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Beto
- */
+import controller.Client_queue;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Client;
+
 public class Client_Search extends javax.swing.JInternalFrame {
+
+    Client_queue clientQueue = new Client_queue();
+    DefaultTableModel table = new DefaultTableModel();
 
     /**
      * Creates new form Client_Search
      */
-    public Client_Search() {
+    public Client_Search(Client_queue clients) {
         initComponents();
+        clientQueue = clients;
+
+        String[] title = new String[]{"Nombre", "Apellido", "Edad", "Correo", "Celular"};
+        table.setColumnIdentifiers(title);
+        tableClient.setModel(table);
+        
+        Client[] clientGet = clientQueue.getAllClients();
+        
+        for(Client client : clientGet) {
+            table.addRow(new Object[]{
+                client.getName(), client.getLastName(), client.getAge(), client.getMail(), client.getCellPhone()
+            });
+        }
     }
 
     /**
@@ -28,7 +41,7 @@ public class Client_Search extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableClient = new javax.swing.JTable();
+        tableClient = new javax.swing.JTable();
         jlbTitulo = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
@@ -41,19 +54,16 @@ public class Client_Search extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jTableClient.setModel(new javax.swing.table.DefaultTableModel(
+        tableClient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Apellido", "Edad", "Correo", "Celular"
             }
         ));
-        jTableClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane1.setViewportView(jTableClient);
+        tableClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane1.setViewportView(tableClient);
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,7 +143,20 @@ public class Client_Search extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        if (txtSearch.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        Client client = clientQueue.getClientByMail(txtSearch.getText());
+        
+        if (client != null) {
+            JOptionPane.showMessageDialog(null, "Cliente encontrado:\nNombre: " + client.getName() + 
+                "\nApellido: " + client.getLastName() + "\nEdad: " + client.getAge() + "\nCorreo: " + 
+                client.getMail() + "\nCelular: " + client.getCellPhone());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró ningún cliente con el correo electrónico proporcionado.", "Cliente busqueda", HEIGHT, frameIcon);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -147,8 +170,8 @@ public class Client_Search extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableClient;
     private javax.swing.JLabel jlbTitulo;
+    private javax.swing.JTable tableClient;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

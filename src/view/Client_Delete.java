@@ -1,19 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Beto
- */
+import controller.Client_queue;
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
+
 public class Client_Delete extends javax.swing.JInternalFrame {
+    Client_queue clientQueue = new Client_queue();
 
     /**
      * Creates new form Client_Delete
      */
-    public Client_Delete() {
+    public Client_Delete(Client_queue clients) {
+        clientQueue = clients;
         initComponents();
     }
 
@@ -29,8 +27,6 @@ public class Client_Delete extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jlbTitulo = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jlbID = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
 
         setClosable(true);
@@ -56,13 +52,6 @@ public class Client_Delete extends javax.swing.JInternalFrame {
             }
         });
 
-        jlbID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jlbID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbID.setText("Correo: ");
-
-        txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(0, 102, 102));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
@@ -78,18 +67,13 @@ public class Client_Delete extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlbID)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnDelete)
-                        .addGap(18, 18, 18)
+                        .addGap(107, 107, 107)
                         .addComponent(btnBack)
-                        .addGap(122, 122, 122))
+                        .addGap(77, 77, 77))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jlbTitulo)
                         .addGap(96, 96, 96))))
@@ -99,15 +83,11 @@ public class Client_Delete extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jlbTitulo)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack)
-                    .addComponent(btnDelete))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(btnDelete)
+                    .addComponent(btnBack))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,11 +105,11 @@ public class Client_Delete extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        clientQueue.dequeue_C();
+        JOptionPane.showMessageDialog(null, "Se ha eliminado el último elemento agregado.", "Cliente eliminado", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        //Si se presiona, cerrara la ventana
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -138,8 +118,6 @@ public class Client_Delete extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDelete;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jlbID;
     private javax.swing.JLabel jlbTitulo;
-    private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

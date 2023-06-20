@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Beto
- */
-public class Client_Register_Edit extends javax.swing.JInternalFrame {
+import controller.Client_queue;
+import javax.swing.JOptionPane;
 
+public class Client_Register_Edit extends javax.swing.JInternalFrame {
+    Client_queue clientQueue = new Client_queue();
+    
     /**
      * Creates new form Client_Register_Edit
      */
-    public Client_Register_Edit() {
+    public Client_Register_Edit(Client_queue clients) {
         initComponents();
+        comboxEdad.addItem("Selecciona");
+        for (int i = 0; i <= 100; i++) {
+            comboxEdad.addItem(String.valueOf(i));
+        }
+        clientQueue = clients;
     }
 
     /**
@@ -68,6 +69,12 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
         lblCellPhone.setForeground(new java.awt.Color(255, 255, 255));
         lblCellPhone.setText("Celular:");
 
+        txtCellPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCellPhoneKeyTyped(evt);
+            }
+        });
+
         lblName.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Nombres:");
@@ -91,8 +98,6 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
                 btnEditActionPerformed(evt);
             }
         });
-
-        comboxEdad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18-25", "26-30", "31-35", "36-40" }));
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 102, 102));
@@ -189,7 +194,48 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+        if (txtName.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo nombres vacio");
+            return;
+        }
+
+        if (txtLastName.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo apellidos vacio");
+            return;
+        }
+
+        if (comboxEdad.getSelectedItem().equals("Selecciona")) {
+            JOptionPane.showMessageDialog(null, "Campo edad sin seleccionar");
+            return;
+        }
+
+        if (txtMail.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        if (txtMail.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo correo vacio");
+            return;
+        }
+
+        if (txtCellPhone.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campo celular vacio");
+            return;
+        }
+
+        if (txtCellPhone.getText().length() < 10) {
+            JOptionPane.showMessageDialog(null, "Numero celular incompleto");
+            return;
+        }
+        String name = txtName.getText();
+        String lastName = txtLastName.getText();
+        int age = Integer.parseInt((String) comboxEdad.getSelectedItem());
+        String mail = txtMail.getText();
+        String cellPhone = txtCellPhone.getText();
+        
+        clientQueue.enqueue_C(name, lastName, age, mail, cellPhone);
+        clientQueue.recorrerCola();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -197,9 +243,21 @@ public class Client_Register_Edit extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        //Si se presiona, cerrara la ventana
-        this.dispose();
+         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtCellPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+
+        if (txtCellPhone.getText().length() == 10) {
+            evt.consume();
+        }
+
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCellPhoneKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

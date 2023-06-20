@@ -101,4 +101,43 @@ public class Client_queue {
             }
         }
     }
+    
+    public Client getClientByMail(String mail) {
+        Client aux = queue_c;
+        
+        while (aux != null) {
+            if (aux.getMail().equals(mail)) {
+                return aux;
+            }
+            aux = aux.getNext();
+        }
+        
+        return null; // No se encontró ningún cliente con el correo electrónico dado
+    }
+    
+    public Client[] getAllClients() {
+        Client[] clients = new Client[getSize()];
+        Client aux = queue_c;
+        int index = 0;
+        
+        while (aux != null) {
+            clients[index] = aux;
+            aux = aux.getNext();
+            index++;
+        }
+        
+        return clients;
+    }
+    
+    private int getSize() {
+        int count = 0;
+        Client aux = queue_c;
+        
+        while (aux != null) {
+            count++;
+            aux = aux.getNext();
+        }
+        
+        return count;
+    }
 }

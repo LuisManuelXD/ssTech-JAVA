@@ -54,11 +54,11 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                           <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -87,8 +87,8 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtID" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jlbID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlbID" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtID" min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="jScrollPane1" alignment="0" min="-2" pref="277" max="-2" attributes="0"/>
@@ -134,10 +134,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                          <Component id="btnAdd" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnBack" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btnAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBack" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEdit" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
@@ -208,6 +206,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtnMantCorrectivo">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="rbGroup1"/>
             </Property>
@@ -245,6 +246,9 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtnMantPreventivo">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="rbGroup1"/>
             </Property>
