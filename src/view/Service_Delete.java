@@ -114,7 +114,7 @@ public class Service_Delete extends javax.swing.JInternalFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         sstack.pop_S();
-        JOptionPane.showMessageDialog(null, "Servicio reciente eliminado.", "Eliminación de servicio", HEIGHT);
+        JOptionPane.showMessageDialog(null, "Servicio reciente eliminado.", "Eliminación de servicio", HEIGHT, frameIcon);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

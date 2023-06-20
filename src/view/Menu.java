@@ -469,7 +469,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMIEditServiceActionPerformed
 
     private void jMISearchServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISearchServiceActionPerformed
-        Service_Search serviceSearch = new Service_Search();
+        Service_Search serviceSearch = new Service_Search(null, stack_s);
         jdpMenu.add(serviceSearch);
         serviceSearch.show();
     }//GEN-LAST:event_jMISearchServiceActionPerformed
